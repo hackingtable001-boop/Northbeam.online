@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Members — Northbeam</title>
+<link id="fav" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%229%22%20fill%3D%22%234f46e5%22%2F%3E%3Cpath%20d%3D%22M9%2023V9l14%2014V9%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.6%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{var A={"ink": ["#0a0a0a", "#f4f4f4"], "indigo": ["#4f46e5", "#818cf8"], "emerald": ["#059669", "#34d399"], "amber": ["#d97706", "#fbbf24"], "rose": ["#e11d48", "#fb7185"], "sky": ["#0284c7", "#38bdf8"]};var s=JSON.parse(localStorage.getItem("nb")||"{}"),d=s.theme==="dark"||(s.theme==="auto"&&matchMedia("(prefers-color-scheme:dark)").matches),a=A[s.acc]||A.indigo,r=document.documentElement;r.dataset.theme=d?"dark":"light";r.style.setProperty("--ac",a[d?1:0])}catch(e){}</script>
+<style>
+:root{--r:12px;--acc:#0a0a0a;--on:#fff;--ease:cubic-bezier(.2,.7,.2,1);--mx:1240px}
+[data-theme=light]{--bg:#fff;--bg2:#f6f6f6;--bg3:#ececec;--fg:#0a0a0a;--mut:#6e6e6e;--line:#e6e6e6;--card:#fff;--inv:#0a0a0a;--invf:#fff;--sh:0 24px 60px -20px rgba(0,0,0,.18)}
+[data-theme=dark]{--bg:#050505;--bg2:#0f0f0f;--bg3:#1a1a1a;--fg:#f4f4f4;--mut:#8f8f8f;--line:#232323;--card:#0c0c0c;--inv:#f4f4f4;--invf:#0a0a0a;--sh:0 24px 60px -20px rgba(0,0,0,.9)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 "Inter","SF Pro Display",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
+.w{max-width:var(--mx);margin:auto;padding:0 5vw}
+.top{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:28px;padding:14px 5vw;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid var(--line)}
+.logo{font-weight:800;letter-spacing:-.03em;font-size:20px;display:flex;align-items:center;gap:8px}
+.nav{display:flex;gap:2px;flex:1}
+.nav button{background:none;border:0;padding:8px 13px;border-radius:99px;color:var(--mut);font-size:15px;transition:.25s}
+.nav button:hover,.nav button.on{color:var(--fg);background:var(--bg2)}
+.tools{display:flex;gap:8px}
+.ico{background:var(--bg2);border:1px solid var(--line);border-radius:99px;padding:8px 14px;line-height:1;transition:.3s var(--ease)}
+.ico:hover{transform:translateY(-2px);border-color:var(--mut)}
+.ico kbd{font:11px inherit;color:var(--mut);margin-left:8px;border:1px solid var(--line);border-radius:5px;padding:2px 5px}
+.burger{display:none}
+.mega{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:var(--sh);max-height:0;overflow:hidden;opacity:0;transition:.4s var(--ease)}
+.mega.open{max-height:520px;opacity:1}
+.mi{max-width:var(--mx);margin:auto;padding:32px 5vw;display:grid;grid-template-columns:repeat(4,1fr);gap:28px 36px}
+.mi h4{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--line);transition:.3s}
+.mi div.on h4{color:var(--fg);border-color:var(--fg)}
+.mi a{display:block;padding:5px 0;color:var(--mut);transition:.25s}
+.mi a:hover{color:var(--fg);transform:translateX(6px)}
+.hero{position:relative;text-align:center;padding:120px 5vw 40px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/64px 64px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/64px 64px;mask:radial-gradient(ellipse 70% 60% at 50% 30%,#000,transparent);-webkit-mask:radial-gradient(ellipse 70% 60% at 50% 30%,#000,transparent);opacity:.7}
+.hero>*{position:relative}
+.pill{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:6px 16px 6px 6px;font-size:13px;color:var(--mut);margin-bottom:32px}
+.pill b{background:var(--inv);color:var(--invf);border-radius:99px;padding:2px 10px;font-weight:600}
+h1{font-size:clamp(46px,8.2vw,112px);line-height:.96;letter-spacing:-.055em;font-weight:800;max-width:1050px;margin:auto}
+h1 em{font-style:normal;color:var(--mut)}
+.lead{font-size:clamp(18px,2vw,22px);color:var(--mut);max-width:640px;margin:32px auto 40px;line-height:1.5}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 30px;border-radius:99px;background:var(--inv);color:var(--invf);border:1px solid var(--inv);font-weight:600;transition:.35s var(--ease)}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--sh)}.btn:hover i{transform:translateX(4px)}.btn i{font-style:normal;transition:.3s}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}.btn.ghost:hover{border-color:var(--fg)}
+.btn.inv{background:var(--invf);color:var(--inv);border-color:var(--invf)}
+.note{margin-top:18px;font-size:13px;color:var(--mut)}
+.shot{position:relative;margin:80px auto 0;max-width:1080px;border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:var(--sh);overflow:hidden;text-align:left;transform:perspective(1600px) rotateX(var(--rx,4deg));transition:transform .2s}
+.bar{display:flex;gap:7px;padding:14px;border-bottom:1px solid var(--line);background:var(--bg2)}
+.bar i{width:11px;height:11px;border-radius:50%;background:var(--bg3)}
+.app{display:grid;grid-template-columns:200px 1fr;min-height:340px}
+.side{border-right:1px solid var(--line);padding:18px;display:grid;gap:6px;align-content:start;font-size:14px;color:var(--mut)}
+.side span{padding:8px 12px;border-radius:8px}.side span:first-child{background:var(--inv);color:var(--invf)}
+.mainp{padding:24px;display:grid;gap:18px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kpis div{border:1px solid var(--line);border-radius:12px;padding:14px;font-size:13px;color:var(--mut)}
+.kpis strong{display:block;font-size:26px;letter-spacing:-.03em;color:var(--fg)}
+.chart{display:flex;align-items:flex-end;gap:8px;height:120px}
+.chart i{flex:1;background:var(--inv);opacity:.88;border-radius:5px 5px 0 0;height:var(--h);transform-origin:bottom;animation:grow 1.3s var(--ease) both;animation-delay:calc(var(--i)*60ms)}
+.chart i:nth-child(odd){background:var(--mut);opacity:.5}
+@keyframes grow{from{transform:scaleY(0)}}
+.mq{overflow:hidden;border-block:1px solid var(--line);margin-top:90px;padding:28px 0;mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);-webkit-mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)}
+.mq div{display:flex;gap:80px;width:max-content;animation:mq 30s linear infinite;font-size:26px;font-weight:700;letter-spacing:-.03em;color:var(--mut)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.sec{padding:110px 0}
+.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--mut);margin-bottom:16px}
+h2{font-size:clamp(34px,5vw,64px);letter-spacing:-.045em;line-height:1.02;font-weight:800;max-width:800px}
+.sub{color:var(--mut);font-size:19px;max-width:600px;margin:18px 0 56px}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bc{border:1px solid var(--line);border-radius:24px;padding:32px;background:var(--bg2);display:flex;flex-direction:column;gap:14px;transition:.5s var(--ease);overflow:hidden}
+.bc:hover{transform:translateY(-8px);box-shadow:var(--sh);border-color:var(--mut)}
+.bc h3{font-size:24px;letter-spacing:-.03em;line-height:1.15}.bc p{color:var(--mut)}
+.viz{height:150px;border-radius:14px;background:var(--bg);border:1px solid var(--line);padding:16px;display:grid;gap:8px;align-content:center}
+.viz b{height:12px;border-radius:6px;background:var(--bg3);width:var(--w);transition:.8s var(--ease)}
+.viz b:first-child{background:var(--inv)}
+.bc:hover .viz b{width:100%}
+.ls{list-style:none;padding:0;display:grid;gap:8px;font-size:15px}.ls li::before{content:"→";margin-right:10px;color:var(--mut)}
+.band{background:var(--inv);color:var(--invf);padding:100px 0}
+.band .eyebrow{color:var(--invf);opacity:.5}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:color-mix(in srgb,var(--invf) 20%,transparent);border:1px solid color-mix(in srgb,var(--invf) 20%,transparent);border-radius:24px;overflow:hidden}
+.stats div{background:var(--inv);padding:44px 28px}
+.stats strong{display:block;font-size:clamp(40px,5vw,68px);letter-spacing:-.05em;line-height:1}
+.stats span{opacity:.55;font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.st{border-top:2px solid var(--fg);padding-top:24px;counter-increment:s}
+.st::before{content:"0" counter(s);display:block;font-size:14px;color:var(--mut);margin-bottom:40px}
+.st h3{font-size:26px;letter-spacing:-.03em;margin-bottom:8px}.st p{color:var(--mut)}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tc{border:1px solid var(--line);border-radius:24px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:40px;transition:.4s var(--ease)}
+.tc:hover{background:var(--bg2);transform:translateY(-6px)}
+.tc q{font-size:20px;letter-spacing:-.02em;line-height:1.35;quotes:none}
+.who{display:flex;gap:12px;align-items:center;font-size:14px;color:var(--mut)}.who b{display:block;color:var(--fg)}
+.av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#222,#aaa);display:grid;place-items:center;color:#fff;font-weight:700}
+.pr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+.pc{border:1px solid var(--line);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:20px;position:relative;transition:.4s var(--ease)}
+.pc:hover{transform:translateY(-8px);box-shadow:var(--sh)}
+.pc.f{background:var(--inv);color:var(--invf);border-color:var(--inv)}
+.pc .pp{font-size:60px;font-weight:800;letter-spacing:-.05em;line-height:1}.pc .pp small{font-size:16px;font-weight:400;opacity:.6;letter-spacing:0}
+.pc .pp s{font-size:22px;opacity:.4;margin-right:8px;font-weight:500}
+.tag{position:absolute;top:24px;right:24px;font-size:12px;border:1px solid currentColor;border-radius:99px;padding:3px 10px}
+.pc ul{list-style:none;padding:0;display:grid;gap:10px;flex:1}.pc li::before{content:"✓";margin-right:10px;opacity:.6}
+.pc .btn{justify-content:center}.pc.f .btn{background:var(--invf);color:var(--inv);border-color:var(--invf)}
+.wg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.wi{padding:34px;border:0 solid var(--line);border-right-width:1px;border-bottom-width:1px;margin:0 -1px -1px 0;transition:.35s}
+.wi:hover{background:var(--inv);color:var(--invf)}.wi:hover p{color:inherit;opacity:.7}
+.wi h3{font-size:19px;margin-bottom:6px;letter-spacing:-.02em}.wi p{color:var(--mut);font-size:15px;transition:.35s}
+.tw{overflow:auto;border:1px solid var(--line);border-radius:24px}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{padding:18px 26px;text-align:left;border-bottom:1px solid var(--line)}th{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);background:var(--bg2)}
+tr:last-child td{border:0}tbody tr{transition:.2s}tbody tr:hover{background:var(--bg2)}td:first-child{font-weight:600}
+.all{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 28px}
+.all h4{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);padding-bottom:12px;border-bottom:1px solid var(--fg);margin-bottom:8px}
+.all a{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);transition:.3s}
+.all a::after{content:"↗";opacity:0;transform:translate(-6px,6px);transition:.3s}
+.all a:hover{padding-left:10px}.all a:hover::after{opacity:1;transform:none}
+.cl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cc{border:1px solid var(--line);border-radius:20px;padding:28px;transition:.4s var(--ease)}.cc:hover{border-color:var(--fg);transform:translateY(-5px)}
+.cc small{color:var(--mut);font-family:ui-monospace,monospace}.cc h3{margin:8px 0 6px;letter-spacing:-.02em}.cc p{color:var(--mut);font-size:15px}
+details{border-bottom:1px solid var(--line);padding:24px 0}
+summary{cursor:pointer;font-size:21px;font-weight:600;letter-spacing:-.02em;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::after{content:"+";font-size:28px;line-height:1;transition:.3s}details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mut);margin-top:12px;max-width:720px}
+.fin{background:var(--inv);color:var(--invf);border-radius:36px;padding:100px 5vw;text-align:center;margin:0 auto 110px;position:relative;overflow:hidden}
+.fin::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(128,128,128,.18) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(128,128,128,.18) 1px,transparent 1px) 0 0/48px 48px;mask:radial-gradient(ellipse at center,#000,transparent 75%);-webkit-mask:radial-gradient(ellipse at center,#000,transparent 75%)}
+.fin>*{position:relative}.fin p{opacity:.6;margin:16px 0 32px}.fin h2{margin:auto}
+.nl{display:flex;gap:10px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.nl input{padding:15px 22px;border-radius:99px;border:1px solid color-mix(in srgb,var(--invf) 30%,transparent);background:transparent;color:inherit;min-width:260px;font:inherit}
+.ph{padding:80px 0 20px}.crumb{color:var(--mut);font-size:14px;margin-bottom:20px}.crumb a:hover{color:var(--fg)}
+.ph h1{margin:0;font-size:clamp(44px,7vw,92px)}.ph .lead{margin:28px 0 36px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.photo{aspect-ratio:4/3.2;border-radius:28px;position:relative;overflow:hidden;background:radial-gradient(circle at 75% 20%,#f2f2f2 0,#b0b0b0 18%,transparent 45%),linear-gradient(160deg,#141414,#4a4a4a 55%,#9a9a9a)}
+.photo::before{content:"";position:absolute;inset:-20%;background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(255,255,255,.08) 46px 48px);animation:pan 14s linear infinite}
+.photo::after{content:"";position:absolute;left:12%;right:12%;bottom:0;height:55%;background:linear-gradient(#222,#000);border-radius:14px 14px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+@keyframes pan{to{transform:translateX(96px)}}
+.f3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rv{opacity:0;transform:translateY(36px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}.rv.in{opacity:1;transform:none}
+.noanim *{transition:none!important;animation:none!important}.noanim .rv{opacity:1;transform:none}
+.foot{border-top:1px solid var(--line);padding:70px 5vw 30px}
+.fg{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:32px;max-width:var(--mx);margin:auto}
+.fg h5{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);margin-bottom:14px}.fg a{display:block;color:var(--mut);padding:3px 0;transition:.2s}.fg a:hover{color:var(--fg)}
+.fb{max-width:var(--mx);margin:50px auto 0;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--mut);font-size:14px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);display:grid;place-items:start center;padding-top:12vh;opacity:0;pointer-events:none;transition:.25s;z-index:90}.modal.open{opacity:1;pointer-events:auto}
+.box{width:min(660px,92vw);background:var(--bg);border:1px solid var(--line);border-radius:20px;overflow:hidden;transform:scale(.96) translateY(10px);transition:.3s var(--ease);box-shadow:var(--sh)}.modal.open .box{transform:none}
+#q{width:100%;padding:22px 24px;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--fg);font-size:19px;outline:0}
+#res{list-style:none;padding:8px;max-height:50vh;overflow:auto}#res li a{display:flex;justify-content:space-between;padding:12px 14px;border-radius:12px}#res li a.sel,#res li a:hover{background:var(--bg2)}#res span{color:var(--mut);font-size:13px}
+.panel{position:fixed;top:0;right:0;bottom:0;width:340px;max-width:92vw;background:var(--bg);border-left:1px solid var(--line);box-shadow:var(--sh);padding:28px;transform:translateX(105%);transition:.45s var(--ease);z-index:95;display:flex;flex-direction:column;gap:10px}.panel.open{transform:none}
+.panel h3{display:flex;justify-content:space-between;align-items:center}.panel label{font-size:13px;color:var(--mut);margin-top:14px}
+.seg{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;padding:3px;gap:3px}.seg button{flex:1;padding:8px;background:none;border:0;border-radius:99px;font-size:14px;transition:.25s}.seg button.on{background:var(--inv);color:var(--invf)}
+.sw{display:flex;gap:12px}.sw button{width:36px;height:36px;border-radius:50%;border:2px solid var(--line);transition:.25s}.sw button:hover{transform:scale(1.12)}.sw button.on{outline:2px solid var(--fg);outline-offset:3px}
+@media(max-width:960px){.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;padding:12px 5vw;border-bottom:1px solid var(--line)}.nav.open{display:flex}.burger{display:block}.tools span,.tools kbd{display:none}.mi,.all{grid-template-columns:repeat(2,1fr)}.bento,.steps,.tg,.pr,.cl,.f3,.split{grid-template-columns:1fr}.wg{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr 1fr}.app{grid-template-columns:1fr}.side{display:none}.sec{padding:70px 0}.shot{transform:none!important}}
+
+.top{gap:18px;padding:10px 5vw;background:color-mix(in srgb,var(--bg) 94%,transparent)}
+.logo{white-space:nowrap;gap:10px;font-size:18px;letter-spacing:-.04em}
+.mk{width:28px;height:28px;color:var(--fg);flex:none;transition:transform .7s var(--ease)}.logo:hover .mk{transform:rotate(-10deg) scale(1.1)}
+.nav button{padding:6px 11px;font-size:14px;white-space:nowrap}
+.ico{white-space:nowrap;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;font-size:14px}
+.ico kbd{margin:0;font-size:11px;font-family:inherit;padding:1px 5px}
+#bar{position:fixed;top:0;left:0;right:0;height:2px;background:var(--fg);transform:scaleX(0);transform-origin:0;z-index:99}
+#cur{position:fixed;inset:0;background:var(--inv);z-index:200;pointer-events:none;transform:translateY(100%);animation:cout .9s var(--ease) both}
+#cur.go{animation:cin .5s var(--ease) both}
+@keyframes cout{from{transform:none}to{transform:translateY(-100%)}}@keyframes cin{from{transform:translateY(100%)}to{transform:none}}
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .02em .1em}.wd>span{display:inline-block;transform:translateY(115%);animation:up 1.1s var(--ease) forwards;animation-delay:calc(var(--i)*70ms + 250ms)}
+@keyframes up{to{transform:none}}.noanim .wd>span{transform:none}
+.hero h1.rv,.ph h1.rv{opacity:1;transform:none;filter:none}
+.rv{filter:blur(6px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease);transition-delay:var(--d,0s)}.rv.in{filter:blur(0)}.noanim .rv{filter:none}
+.shot{transform:perspective(1600px) rotateX(var(--rx,12deg)) scale(var(--sc,.94));transition:none}
+.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.stats div{padding:38px 24px;min-width:0}.stats strong{font-size:clamp(30px,3.4vw,48px);font-variant-numeric:tabular-nums;white-space:nowrap}
+.bc,.tc,.cc,.wi{position:relative;overflow:hidden}
+.bc::after,.tc::after,.cc::after,.wi::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--fg) 8%,transparent),transparent 60%);opacity:0;transition:opacity .4s}
+.bc:hover::after,.tc:hover::after,.cc:hover::after,.wi:hover::after{opacity:1}
+.wg{gap:16px;border:0;border-radius:0;overflow:visible}
+.wi{margin:0;border:1px solid var(--line);border-radius:24px;padding:30px;background:var(--bg2);transition:transform .5s var(--ease),border-color .3s,box-shadow .5s,opacity .9s var(--ease),filter .9s var(--ease)}
+.wi:hover{transform:translateY(-8px);border-color:var(--mut);box-shadow:var(--sh);background:var(--bg2);color:var(--fg)}.wi:hover p{color:var(--mut);opacity:1}
+.wi .n{position:absolute;right:26px;top:24px;font:600 13px ui-monospace,monospace;color:var(--mut);opacity:.55}
+.wi .gl{width:52px;height:52px;border-radius:16px;border:1px solid var(--line);background:var(--bg);display:grid;place-items:center;margin-bottom:52px;transition:.55s var(--ease)}
+.wi .gl svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wi:hover .gl{background:var(--inv);color:var(--invf);transform:rotate(-8deg) scale(1.1)}
+.wi h3{font-size:20px;margin-bottom:8px}
+.tc{gap:26px}.tc::before{content:"“";font-size:90px;line-height:.5;height:34px;color:var(--mut);font-family:Georgia,serif}
+.mq div:hover{animation-play-state:paused}
+
+:root{--ac:#4f46e5;--acon:#fff}
+::selection{background:var(--ac);color:var(--acon)}
+#bar{background:var(--ac)}
+.pill b{background:var(--ac);color:var(--acon)}
+h1 em{color:var(--ac)}
+.hero .btn:not(.ghost){background:var(--ac);border-color:var(--ac);color:var(--acon)}
+.chart i:nth-child(odd){background:var(--ac);opacity:.9}
+.side span:first-child{background:var(--ac);color:var(--acon)}
+.eyebrow::before{content:"";display:inline-block;width:20px;height:2px;background:var(--ac);vertical-align:middle;margin-right:10px;border-radius:2px}
+.st{border-top-color:var(--ac)}.st::before{color:var(--ac)}
+.ls li::before,.pc:not(.f) li::before{color:var(--ac);opacity:1}
+.wi .n{color:var(--ac);opacity:.9}.wi:hover .gl{background:var(--ac);color:var(--acon)}
+.mi a:hover{color:var(--ac)}.mi div.on h4{border-color:var(--ac)}.nav button.on{color:var(--ac)}
+.band{position:relative}.band::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ac),transparent 70%)}
+.photo{background:radial-gradient(circle at 75% 20%,#f2f2f2 0,color-mix(in srgb,var(--ac) 40%,#b0b0b0) 18%,transparent 46%),linear-gradient(160deg,#141414,color-mix(in srgb,var(--ac) 28%,#4a4a4a) 55%,#9a9a9a)}
+.av{background:linear-gradient(135deg,var(--ac),#111);color:var(--acon)}
+.pc.f,.fin{background:linear-gradient(160deg,var(--inv),color-mix(in srgb,var(--inv) 72%,var(--ac)))}
+.cc:hover small,.tc:hover::before,.tag{color:var(--ac)}
+.hero.sh2{padding-bottom:70px}
+.hero .mq{margin-top:80px}
+#cur{animation:none;background:#0a0a0a;transform:translateY(100%)}#cur.go{animation:cin .5s var(--ease) both}
+#ld{position:fixed;inset:0;z-index:300;color:#fff;display:grid;place-items:center;--p:0;animation:ldx 0s 7s forwards}
+@keyframes ldx{to{visibility:hidden}}
+#ld .lt,#ld .lb{position:absolute;left:0;right:0;height:50.5%;background:#0a0a0a;transition:transform 1s var(--ease)}#ld .lt{top:0}#ld .lb{bottom:0}
+#ld.done .lt{transform:translateY(-101%)}#ld.done .lb{transform:translateY(101%)}
+#ld .lc{position:relative;display:grid;justify-items:center;gap:26px;transition:opacity .35s,transform .7s var(--ease)}#ld.done .lc{opacity:0;transform:scale(.88)}
+#ld .lm{width:92px;height:92px;overflow:visible}
+#ld .lm rect,#ld .lm path{fill:none;stroke:#fff;stroke-dasharray:100;stroke-dashoffset:100}
+#ld .lm rect{stroke-width:1.2;animation:dr 1s var(--ease) .1s forwards}#ld .lm path{stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;animation:dr 1s var(--ease) .6s forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+#ld .lw{display:flex;overflow:hidden;padding-bottom:.15em;font:800 30px/1.2 Inter,system-ui,sans-serif;letter-spacing:-.04em}
+#ld .lw span{display:inline-block;transform:translateY(115%);animation:up .8s var(--ease) forwards;animation-delay:calc(.6s + var(--i)*55ms)}
+#ld .ln{position:absolute;right:5vw;bottom:4vh;font:800 clamp(70px,13vw,170px)/1 Inter,system-ui,sans-serif;letter-spacing:-.06em;font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:6px;transition:opacity .3s}
+#ld .ln span{font-size:.28em;color:var(--ac);letter-spacing:0}
+#ld .lp{position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--ac);transform:scaleX(var(--p));transform-origin:0;transition:opacity .3s}
+#ld .ls2{position:absolute;left:5vw;bottom:5vh;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.5}
+#ld.done .ln,#ld.done .lp,#ld.done .ls2{opacity:0}
+#ld.fast .lm rect{animation-duration:.45s}#ld.fast .lm path{animation-duration:.45s;animation-delay:.25s}#ld.fast .lw span{animation-delay:calc(.15s + var(--i)*25ms)}
+html:not(.ready) .wd>span{animation-play-state:paused}
+
+.mi.one{grid-template-columns:1fr}.mi.one>div{display:flex;flex-wrap:wrap;gap:4px 32px;align-items:center}.mi.one h4{width:100%}
+#sbtn kbd{margin-left:auto}#sbtn span{color:var(--mut)}
+@media(min-width:961px){#sbtn{min-width:min(420px,32vw);justify-content:flex-start;padding:9px 16px}}
+
+#co{z-index:120;place-items:start center;padding:24px 16px;overflow:auto}
+.ck{position:relative;display:grid;grid-template-columns:1fr 1.15fr;width:min(960px,100%);margin:auto;background:var(--bg);border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--sh);transform:translateY(28px) scale(.97);transition:transform .55s var(--ease)}
+#co.open .ck{transform:none}
+.ckl{background:var(--inv);color:var(--invf);padding:40px;display:flex;flex-direction:column;gap:18px}
+.ckl .eyebrow{color:inherit;opacity:.55;margin:0}.ckl h3{font-size:32px;letter-spacing:-.035em}
+.ckl .ls li::before{color:var(--ac)}.ckl small{opacity:.55}
+.tot{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(128,128,128,.35);padding-top:16px;margin-top:auto}.tot b{font-size:36px;letter-spacing:-.04em}
+.cc3{aspect-ratio:1.586;max-width:340px;border-radius:18px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,color-mix(in srgb,var(--ac) 55%,#111),#111 72%);color:#fff;border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 40px -20px rgba(0,0,0,.7);font-family:ui-monospace,Menlo,monospace}
+.cc3 .cb{font:700 14px Inter,system-ui,sans-serif;letter-spacing:.12em;opacity:.85}.cc3 .cn{font-size:clamp(15px,2.2vw,20px);letter-spacing:.08em}.cc3 .cr{display:flex;justify-content:space-between;gap:10px;font-size:12px;opacity:.85;text-transform:uppercase}
+.ckr{padding:40px;display:grid;gap:14px;align-content:start}.ckr h3{font-size:26px;letter-spacing:-.03em}
+.ckr label{display:grid;gap:6px;font-size:13px;color:var(--mut)}
+.ckr input{padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--fg);font:inherit;font-size:16px;outline:0;transition:.25s}
+.ckr input:focus{border-color:var(--ac);box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 22%,transparent)}.ckr input.bad{border-color:#d33}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.err{color:#d33;font-size:14px;min-height:20px}
+.ckr .btn{justify-content:center;width:100%}.ckr .btn[disabled]{opacity:.7;pointer-events:none}
+.dm{font-size:12px;color:var(--mut);text-align:center}.cx{position:absolute;right:16px;top:16px;z-index:2}
+.spin{display:inline-block;animation:rot .8s linear infinite}@keyframes rot{to{transform:rotate(360deg)}}
+.ok{display:grid;justify-items:center;text-align:center;gap:14px;padding:30px 0}.ok svg{width:88px;height:88px}
+.ok circle,.ok path{fill:none;stroke:var(--ac);stroke-dasharray:100;stroke-dashoffset:100;animation:dr .9s var(--ease) forwards}.ok path{animation-delay:.5s}
+.noanim .ok circle,.noanim .ok path{stroke-dashoffset:0}
+@media(max-width:800px){.ck{grid-template-columns:1fr}.ckl,.ckr{padding:28px}.cc3{max-width:none}}
+.wt{margin:0 auto;font-size:12px;color:var(--mut)}.bar{align-items:center}.wb{padding:22px;min-height:220px}.hr{min-width:0}
+.hero.sp{text-align:left;padding:96px 0 90px}.spi{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.sp h1{margin:0;font-size:clamp(38px,5.2vw,74px);max-width:none}.sp .lead{margin:26px 0 32px}.sp .cta{justify-content:flex-start}.sp .shot{margin:0;transform:none!important}.sp .crumb{margin-bottom:24px}
+.hero.dk{background:var(--inv);color:var(--invf)}.dk::before{background:linear-gradient(rgba(128,128,128,.25) 1px,transparent 1px) 0 0/64px 64px,linear-gradient(90deg,rgba(128,128,128,.25) 1px,transparent 1px) 0 0/64px 64px}
+.dk .lead,.dk .crumb{color:inherit;opacity:.65}.dk .btn.ghost{color:inherit;border-color:rgba(128,128,128,.5)}.dk .shot{box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+[data-theme=light] .dk h1 em{color:color-mix(in srgb,var(--ac) 55%,#fff)}[data-theme=dark] .dk h1 em{color:color-mix(in srgb,var(--ac) 85%,#000)}
+@keyframes fi{from{opacity:0;transform:translateY(12px)}}
+.rw{display:grid;gap:10px}.r{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:14px;transition:.3s var(--ease);animation:fi .6s var(--ease) both}.r:hover{transform:translateX(6px);border-color:var(--mut)}
+.r small{display:block;color:var(--mut)}.r em{font-style:normal;font-size:12px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--mut)}
+.av2{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--ac),#222);color:var(--acon);display:grid;place-items:center;font-weight:700}
+.tg2{width:40px;height:22px;border-radius:99px;background:var(--bg3);position:relative;transition:.3s}.tg2::after{content:"";position:absolute;left:3px;top:3px;width:16px;height:16px;border-radius:50%;background:var(--bg);transition:.3s}.tg2.on{background:var(--ac)}.tg2.on::after{left:21px}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.t{border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:4px;transition:.35s var(--ease)}.t:hover{transform:translateY(-6px);border-color:var(--ac);box-shadow:var(--sh)}
+.t span{width:40px;height:40px;border-radius:12px;background:var(--inv);color:var(--invf);display:grid;place-items:center;font-weight:800;margin-bottom:8px}.t small{color:var(--mut)}
+.mt{width:100%;min-width:0}.mt th,.mt td{padding:12px 10px;background:none;text-transform:none;letter-spacing:0;font-size:14px;color:inherit;border-bottom:1px solid var(--line)}.mt th{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.08em}.mt td:first-child{font-weight:600}
+.mx td,.mx th{text-align:center}.mx td:first-child,.mx th:first-child{text-align:left}.ck1{color:var(--ac);font-weight:800}.ck0{color:var(--mut)}
+.tm{font:13px/1.9 ui-monospace,Menlo,monospace;background:var(--bg2);border-radius:14px;padding:18px;white-space:pre-wrap;overflow:auto;margin:0}.tm span{display:block;animation:fi .5s var(--ease) both;animation-delay:calc(var(--i)*.25s)}.tm b{color:var(--ac)}.tm u{text-decoration:none;color:var(--mut)}
+.ch{display:grid;gap:10px}.b{max-width:78%;padding:12px 16px;border-radius:18px 18px 18px 4px;background:var(--bg2);animation:fi .6s var(--ease) both;animation-delay:calc(var(--i)*.45s)}.b.me{margin-left:auto;background:var(--ac);color:var(--acon);border-radius:18px 18px 4px 18px}
+.kan{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.kc{background:var(--bg2);border-radius:14px;padding:10px;display:grid;gap:8px;align-content:start}.kc h5{font-size:12px;color:var(--mut);display:flex;justify-content:space-between;text-transform:uppercase;letter-spacing:.08em}
+.kt{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;font-size:13px;display:flex;gap:8px;align-items:center;animation:fi .6s var(--ease) both;animation-delay:calc(var(--i)*.12s);transition:.3s}.kt:hover{transform:translateY(-3px) rotate(-1deg);box-shadow:var(--sh)}.kt i{width:8px;height:8px;border-radius:50%;background:var(--ac);flex:none}
+@keyframes sx{from{transform:scaleX(0)}}
+.gt{display:grid;gap:14px}.g{display:grid;grid-template-columns:80px 1fr;gap:12px;align-items:center;font-size:14px}.g>div{height:26px;background:var(--bg2);border-radius:8px;position:relative}.g i{position:absolute;left:var(--l);width:var(--w);top:0;bottom:0;border-radius:8px;background:var(--inv);transform-origin:left;animation:sx 1s var(--ease) both;animation-delay:calc(var(--i)*.15s)}.g:nth-child(odd) i{background:var(--ac)}
+.lnc{width:100%;height:auto}.lnc path{fill:none;stroke-width:3;stroke-linecap:round;stroke-dasharray:1200;stroke-dashoffset:1200;animation:dr 2s var(--ease) forwards}.lnc .gr{stroke:var(--line);stroke-width:1;stroke-dasharray:none;stroke-dashoffset:0;animation:none}.lnc .l1{stroke:var(--ac)}.lnc .l2,.lnc .l2s{stroke:var(--mut);stroke-dasharray:8 8;stroke-dashoffset:0;animation:none}
+.sp4{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.sc{border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:4px}.sc small{color:var(--mut)}.sc b{font-size:26px;letter-spacing:-.03em}.mb{display:flex;align-items:flex-end;gap:4px;height:46px}.mb i{flex:1;background:var(--ac);opacity:.85;border-radius:3px;height:var(--h);transform-origin:bottom;animation:grow 1s var(--ease) both;animation-delay:calc(var(--i)*60ms)}
+.fn{display:grid;gap:14px}.fnr{display:grid;grid-template-columns:100px 1fr 44px;gap:12px;align-items:center;font-size:14px}.fnr>div{height:30px;background:var(--bg2);border-radius:8px;overflow:hidden}.fnr i{display:block;height:100%;width:var(--w);background:var(--ac);opacity:calc(1 - var(--i)*.2);transform-origin:left;animation:sx 1s var(--ease) both;animation-delay:calc(var(--i)*.15s)}.fnr b{text-align:right}
+.co{display:grid;gap:6px;font-size:12px}.ch0,.cr0{display:grid;grid-template-columns:60px repeat(7,1fr);gap:6px;align-items:center}.ch0 span{color:var(--mut);text-align:center}.cr0 i{height:34px;border-radius:8px;font-style:normal;display:grid;place-items:center;background:color-mix(in srgb,var(--ac) calc(var(--a)*100%),transparent);animation:fi .6s var(--ease) both;animation-delay:calc(var(--i)*60ms)}.cr0 i.e{background:none}.cr0 i.hi{color:var(--acon)}.cr0>span{color:var(--mut)}
+.fl{width:100%;height:auto}.fl path{fill:none;stroke:var(--mut);stroke-width:2;stroke-dasharray:6 6}.fl rect{fill:var(--bg);stroke:var(--line);stroke-width:1.5;transition:.3s}.fl g:hover rect{stroke:var(--ac)}.fl text{fill:var(--fg);font:600 13px Inter,system-ui,sans-serif;text-anchor:middle}.fl circle{fill:var(--ac)}
+.ky{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center}.ky svg{width:100%;fill:none;stroke:var(--ac);stroke-width:1.6}.ky svg circle{transform-origin:100px 100px;animation:spin 18s linear infinite;stroke-dasharray:4 8}.ky svg circle:nth-child(2){animation-direction:reverse}.ky svg rect,.ky svg path{stroke:var(--fg);stroke-width:2.4}.ky p{display:grid;margin:0 0 14px}.ky small{color:var(--mut)}.ky b{font-size:20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.dc{position:relative;display:grid;gap:12px;min-height:200px;align-content:start}.dc h4{font-size:20px}.dc i{display:block;height:10px;border-radius:5px;background:var(--bg3);width:var(--w)}
+.cu{position:absolute;left:var(--x);top:var(--y);width:2px;height:22px;background:var(--ac);animation:mv 6s var(--ease) infinite alternate}.cu.c2{background:var(--fg);animation-duration:8s}.cu em{position:absolute;top:-20px;left:0;font:600 11px Inter,sans-serif;background:inherit;color:var(--acon);padding:2px 7px;border-radius:6px 6px 6px 0;white-space:nowrap;font-style:normal}.cu.c2 em{color:var(--bg)}
+@keyframes mv{to{transform:translate(70px,40px)}}
+.ts{display:grid;gap:10px}.to{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--bg);box-shadow:var(--sh);animation:fi .7s var(--ease) both;animation-delay:calc(var(--i)*.25s)}.to:nth-child(2){margin-left:18px}.to:nth-child(3){margin-left:36px}.to:nth-child(4){margin-left:54px}.dt{width:10px;height:10px;border-radius:50%;background:var(--ac);flex:none}.to small{display:block;color:var(--mut)}
+.cl7{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.cl7>b{text-align:center;font-size:12px;color:var(--mut)}.cl7>div{min-height:62px;border:1px solid var(--line);border-radius:10px;padding:6px;font-size:12px;transition:.25s;min-width:0}.cl7>div:hover{background:var(--bg2)}.cl7 .o{opacity:.35}.cl7 em{display:block;margin-top:4px;font-style:normal;background:var(--ac);color:var(--acon);border-radius:5px;padding:1px 5px;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dx{display:grid;grid-template-columns:150px 1fr;gap:22px}.sd{display:grid;gap:4px;align-content:start;font-size:14px;color:var(--mut)}.sd span{padding:6px 10px;border-radius:8px}.sd .on{background:var(--bg2);color:var(--fg);font-weight:600}.ar{display:grid;gap:10px;min-width:0}.ar h4{font-size:22px}.ar i{display:block;height:9px;border-radius:5px;background:var(--bg3);width:var(--w)}.ar pre{background:var(--bg2);border-radius:10px;padding:12px;font:12px ui-monospace,monospace;overflow:auto;margin:0}
+.ps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.p{display:grid;gap:6px;animation:fi .6s var(--ease) both;animation-delay:calc(var(--i)*.15s);transition:.35s var(--ease)}.p:hover{transform:translateY(-6px)}.im{aspect-ratio:4/3;border-radius:14px;background:linear-gradient(135deg,#222,color-mix(in srgb,var(--ac) 40%,#888))}.p small{color:var(--mut)}
+.wn{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.wn>div{border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:4px;animation:fi .6s var(--ease) both;animation-delay:calc(var(--i)*.15s)}.wn small,.wn span{color:var(--mut)}.wn b{font-size:36px;letter-spacing:-.05em;color:var(--ac)}
+.cs{display:grid;gap:14px}.cs>div{display:grid;grid-template-columns:140px 1fr 44px;gap:12px;align-items:center;font-size:14px}.pb{height:10px;border-radius:5px;background:var(--bg2);overflow:hidden}.pb i{display:block;height:100%;width:var(--w);background:var(--ac);transform-origin:left;animation:sx 1.1s var(--ease) both;animation-delay:calc(var(--i)*.15s)}.cs b{text-align:right}
+.tn{display:grid;gap:18px;border-left:2px solid var(--line);padding-left:22px}.tn>div{position:relative;display:grid;animation:fi .6s var(--ease) both;animation-delay:calc(var(--i)*.2s)}.tn>div::before{content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--ac)}.tn b{font-size:22px}.tn span{color:var(--mut)}
+.up{display:grid;gap:16px}.up>div{display:grid;grid-template-columns:90px 1fr 56px;gap:12px;align-items:center;font-size:13px}.up>div>div{display:flex;gap:2px;height:28px}.up i{flex:1;border-radius:2px;background:var(--ac);opacity:.85;transform-origin:bottom;animation:grow .6s var(--ease) both;animation-delay:calc(var(--i)*15ms)}.up i.w{background:var(--mut);opacity:.5}.up b{text-align:right}
+.cf2{display:grid;gap:12px}.cf2 input,.cf2 textarea{padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--fg);font:inherit;outline:0;transition:.25s}.cf2 textarea{min-height:110px;resize:vertical}.cf2 input:focus,.cf2 textarea:focus{border-color:var(--ac)}.cf2 .btn{justify-content:center}.ok2{padding:60px 10px;text-align:center;font-size:18px}
+.frs{display:grid}.fr{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:30px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line);transition:.4s var(--ease)}.fr:hover{padding-left:16px;border-color:var(--ac)}.fr span{font:600 14px ui-monospace,monospace;color:var(--ac)}.fr h3{font-size:clamp(24px,3vw,38px);letter-spacing:-.04em}.fr p{color:var(--mut);font-size:18px}
+.gl2{width:52px;height:52px;border-radius:16px;background:var(--inv);color:var(--invf);display:grid;place-items:center;margin-bottom:34px;transition:.5s var(--ease)}.bc:hover .gl2{background:var(--ac);color:var(--acon);transform:rotate(-8deg) scale(1.1)}.gl2 svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.idps{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}.idps span{border:1px solid rgba(128,128,128,.4);border-radius:99px;padding:6px 14px;font-size:13px;opacity:.8;transition:.3s}.idps span:hover{border-color:var(--ac);opacity:1;transform:translateY(-2px)}
+.api .spi{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.tabs{display:flex;gap:6px;margin-bottom:12px}.tabs button{background:none;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;transition:.25s}.tabs button.on{background:var(--inv);color:var(--invf);border-color:var(--inv)}.tabs .cp{margin-left:auto}
+.code{font:13px/1.7 ui-monospace,Menlo,Consolas,monospace;background:var(--bg2);border-radius:14px;padding:18px;overflow:auto;max-height:350px;white-space:pre;margin:0;animation:fi .4s var(--ease)}
+.code .k{color:var(--ac);font-weight:600}.code .s{color:#2f9e6e}.code .c{color:var(--mut);font-style:italic}.code .n{color:#d08a2e}
+.resp{margin-top:12px;display:grid;gap:6px}.resp span{font-size:12px;color:var(--ac);font-weight:700}.resp pre{margin:0;background:var(--bg2);border-radius:12px;padding:12px;font:12px ui-monospace,monospace;overflow:auto}
+.mth{font:700 11px ui-monospace,monospace;padding:3px 8px;border-radius:6px;background:var(--bg3)}.mth.POST{background:var(--ac);color:var(--acon)}.mth.DELETE{background:var(--inv);color:var(--invf)}
+.ins{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.ins>div{border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;gap:10px;transition:.4s var(--ease)}.ins>div:hover{transform:translateY(-6px);border-color:var(--ac)}.ins code{background:var(--bg2);padding:10px 12px;border-radius:10px;font:13px ui-monospace,monospace;overflow:auto;white-space:nowrap}
+.sso{padding-bottom:110px}.sso::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-45%;height:75%;background:radial-gradient(ellipse at 70% 0%,color-mix(in srgb,var(--ac) 38%,transparent),transparent 62%);pointer-events:none}
+.ssi{display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:60px;align-items:center;text-align:left;position:relative;z-index:1}.sso h1{margin:0;font-size:clamp(40px,5.6vw,80px);max-width:none}.sso .lead{margin-left:0}.sso .cta{justify-content:flex-start}
+.lg{background:var(--bg);color:var(--fg);border-radius:28px;padding:32px;display:grid;gap:14px;box-shadow:0 40px 90px -30px rgba(0,0,0,.8);transition:.5s var(--ease);min-height:440px;align-content:start}.lg:hover{transform:translateY(-6px) rotate(-.4deg)}
+.lgh{display:flex;gap:12px;align-items:center}.lgh small{color:var(--mut);display:block}.mk2{width:42px;height:42px;border-radius:12px;background:var(--ac);color:var(--acon);display:grid;place-items:center;font-weight:800}
+.lg label{font-size:13px;color:var(--mut)}.lg input{padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--fg);font:inherit;outline:0}.lg input:focus{border-color:var(--ac)}.lg .btn{justify-content:center}
+.or{text-align:center;color:var(--mut);font-size:13px;display:flex;align-items:center;gap:12px}.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.pv{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pv button{padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);transition:.3s var(--ease)}.pv button:hover{border-color:var(--ac);transform:translateY(-2px)}.sm{font-size:12px;color:var(--mut);text-align:center}
+.lg .ok{padding:50px 0}
+.ssf{border:1px solid var(--line);border-radius:28px;padding:36px;background:var(--bg2)}.ssf svg{width:100%;height:auto}.ssf rect{fill:var(--bg);stroke:var(--line);stroke-width:1.5}.ssf text{fill:var(--fg);font:600 15px Inter,system-ui,sans-serif;text-anchor:middle}.ssf path{stroke:var(--mut);stroke-width:2;stroke-dasharray:6 6;fill:none}.ssf circle{fill:var(--ac)}.ssf .lb{font:12px Inter,sans-serif;fill:var(--mut)}
+.pro6{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.pc6{position:relative;border-radius:28px;padding:34px;background:var(--bg2);border:1px solid var(--line);overflow:hidden;transition:.5s var(--ease)}.pc6::before{content:attr(data-n);position:absolute;right:20px;top:6px;font-size:90px;font-weight:800;letter-spacing:-.06em;opacity:.07}.pc6:hover{background:var(--inv);color:var(--invf);transform:translateY(-8px)}.pc6:hover p{color:inherit;opacity:.7}.pc6 h3{font-size:24px;letter-spacing:-.03em;margin:46px 0 8px}.pc6 p{color:var(--mut)}.tg3{display:inline-block;font-size:12px;border:1px solid currentColor;border-radius:99px;padding:2px 10px;opacity:.7}
+.stp{display:grid;grid-template-columns:repeat(3,1fr);position:relative}.stp::before{content:"";position:absolute;top:22px;left:12%;right:12%;height:2px;background:var(--line)}.stp>div{position:relative;text-align:center;padding:0 24px}.stp i{width:46px;height:46px;border-radius:50%;background:var(--ac);color:var(--acon);display:grid;place-items:center;margin:0 auto 20px;font-style:normal;font-weight:800;position:relative;transition:.4s var(--ease)}.stp>div:hover i{transform:scale(1.15)}.stp h3{margin-bottom:6px}.stp p{color:var(--mut)}
+@media(max-width:960px){.spi,.ssi,.api .spi{grid-template-columns:1fr}.pro6,.ins,.stp,.ps,.wn,.tl,.sp4{grid-template-columns:1fr 1fr}.fr{grid-template-columns:1fr;gap:6px}.kan{grid-template-columns:1fr 1fr}.ky{grid-template-columns:1fr}.stp::before{display:none}.dx{grid-template-columns:1fr}.sd{display:none}}
+@media(max-width:560px){.pro6,.ins,.stp,.ps,.wn,.tl{grid-template-columns:1fr}.cl7>div{min-height:44px}.cl7 em{display:none}}
+#ld .ln{place-self:end}#ld .ls2{place-self:end start}#ld .lp{place-self:end stretch}
+.ico.burger{display:none}@media(max-width:960px){.ico.burger{display:inline-flex}}
+.sso::after{top:auto;left:0;right:0;bottom:0;height:85%;background:radial-gradient(closest-side at 68% 62%,color-mix(in srgb,var(--ac) 34%,transparent),transparent)}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.g2>div{border:1px solid var(--line);border-radius:28px;padding:34px;background:var(--bg2);transition:.45s var(--ease)}.g2>div:hover{transform:translateY(-6px);border-color:var(--ac);background:var(--bg)}.g2 h3{font-size:24px;letter-spacing:-.03em;margin-bottom:6px}.g2 p{color:var(--mut)}
+.qb{border-radius:32px;padding:clamp(32px,6vw,72px);background:linear-gradient(135deg,var(--inv),color-mix(in srgb,var(--inv) 70%,var(--ac)));color:var(--invf);display:grid;gap:36px}.qb q{font-size:clamp(26px,4vw,52px);letter-spacing:-.04em;line-height:1.12;quotes:none;max-width:900px}.qb .who{color:inherit;opacity:.8}
+.tbs{border:1px solid var(--line);border-radius:28px;overflow:hidden}.tbh{display:flex;gap:4px;padding:10px;background:var(--bg2);overflow:auto}.tbh button{border:0;background:none;padding:10px 20px;border-radius:99px;transition:.3s;white-space:nowrap}.tbh button:hover{background:var(--bg3)}.tbh button.on{background:var(--inv);color:var(--invf)}
+.tbp{display:none;padding:44px}.tbp.on{display:block;animation:fi .5s var(--ease)}.tbp h3{font-size:clamp(26px,3.4vw,42px);letter-spacing:-.04em;margin-bottom:10px}.tbp p{color:var(--mut);font-size:18px;max-width:560px}
+.mbars{display:grid;gap:10px;margin-top:30px;max-width:520px}.mbars i{display:block;height:12px;border-radius:6px;background:var(--ac);width:var(--w);transform-origin:left;animation:sx 1s var(--ease) both}.mbars i:nth-child(2){opacity:.6}.mbars i:nth-child(3){opacity:.3}
+.bn{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.bn>div{border:1px solid var(--line);border-radius:28px;padding:36px;display:grid;gap:6px}.bn strong{font-size:clamp(44px,6vw,80px);letter-spacing:-.06em;line-height:1;color:var(--ac);font-variant-numeric:tabular-nums}.bn span{color:var(--mut)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:28px;overflow:hidden}.cmp>div{padding:36px;display:grid;gap:14px;align-content:start}.cmp h4{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut)}.cmp p{font-size:19px;display:flex;gap:12px}.cmp .x{color:var(--mut)}.cmp .x::before{content:"✕"}.cmp .v::before{content:"✓";color:var(--ac);font-weight:800}.cmp .yes{background:var(--bg2)}
+.bl{display:grid}.bl>div{display:grid;grid-template-columns:70px 1fr 1.3fr;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);transition:.4s var(--ease)}.bl>div:hover{padding-left:14px;border-color:var(--ac)}.bl span{font:600 13px ui-monospace,monospace;color:var(--ac)}.bl b{font-size:clamp(22px,2.6vw,34px);letter-spacing:-.03em}.bl em{font-style:normal;color:var(--mut);font-size:18px}
+.cas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.cas>div{border-radius:28px;padding:32px;background:var(--bg2);display:grid;gap:6px;transition:.4s var(--ease)}.cas>div:hover{transform:translateY(-6px);background:var(--inv);color:var(--invf)}.cas small,.cas span{color:var(--mut)}.cas>div:hover small,.cas>div:hover span{color:inherit;opacity:.7}.cas b{font-size:clamp(40px,5vw,64px);letter-spacing:-.05em;line-height:1.05;color:var(--ac)}.cas>div:hover b{color:inherit}
+.ban{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;border:1px solid var(--line);border-radius:32px;padding:44px;background:var(--bg2)}.ban h2{font-size:clamp(26px,3.4vw,42px)}.ban p{color:var(--mut);margin-top:6px}
+.hero.hd{text-align:left;padding:90px 0 30px}.hd h1{max-width:none;margin:0;font-size:clamp(52px,10vw,150px)}.hdm{display:flex;justify-content:space-between;color:var(--mut);font:600 12px ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:34px}.hdb{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;margin-top:34px}.hdb .lead{margin:0}.hd .cta{justify-content:flex-start}.stagebox{margin:20px auto 0}.stagebox .shot{margin:0;transform:none!important}
+@media(max-width:960px){.g2,.bn,.cmp,.cas{grid-template-columns:1fr}.bl>div{grid-template-columns:1fr;gap:4px}.hdb{grid-template-columns:1fr}.tbp{padding:28px}}
+.shot{color:var(--fg)}
+.au{display:flex;gap:6px;align-items:center;margin-left:4px}
+.ico.lgi{background:none;border-color:transparent}.ico.lgi:hover{background:var(--bg2)}
+.sgn{padding:8px 16px;font-size:14px;background:var(--ac);border-color:var(--ac);color:var(--acon)}
+.meb{position:relative}.me .av2{width:24px;height:24px;font-size:12px}
+.um{position:absolute;right:0;top:calc(100% + 10px);min-width:230px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--sh);display:none;gap:6px}.um.open{display:grid;animation:fi .3s var(--ease)}.um small{color:var(--mut)}.um b{word-break:break-all}.um .btn{padding:10px;justify-content:center;margin-top:6px}
+@media(max-width:640px){.ico.lgi{display:none}}
+.bill{display:flex;margin:-20px 0 36px}
+.seg2{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;background:var(--bg2);border:1px solid var(--line);border-radius:99px;padding:4px}
+.seg2 button{position:relative;z-index:1;border:0;background:none;padding:10px 22px;border-radius:99px;color:var(--mut);white-space:nowrap;transition:color .3s}.seg2 button.on{color:var(--fg)}
+.seg2 i{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);background:var(--bg);border-radius:99px;box-shadow:var(--sh);transition:transform .45s var(--ease)}
+[data-theme=dark] .seg2 i{background:var(--bg3)}.seg2[data-b=y] i{transform:translateX(100%)}
+.seg2 em{font-style:normal;font-size:12px;font-weight:700;background:var(--ac);color:var(--acon);border-radius:99px;padding:2px 8px;margin-left:6px}
+.bnote{display:block;color:var(--mut);margin-top:-10px;min-height:22px;font-size:14px}.pc.f .bnote{color:inherit;opacity:.6}
+.amt{font-variant-numeric:tabular-nums}
+.hero.nf{overflow:visible;padding-bottom:100px}.hero.nf::before{bottom:0}
+.n404{display:flex;justify-content:center;align-items:center;font-size:clamp(110px,24vw,300px);font-weight:800;letter-spacing:-.07em;line-height:.95;margin-bottom:10px}
+.n404 span{display:inline-block;animation:fl 6s ease-in-out infinite}.n404 span:last-child{animation-delay:-3s}
+@keyframes fl{50%{transform:translateY(-14px)}}
+.ring{width:.74em;height:.74em;margin:0 .02em;fill:none;stroke:currentColor;stroke-width:7;overflow:visible}.ring .orb{fill:color-mix(in srgb,var(--ac) 55%,#fff);stroke:none}[data-theme=dark] .ring .orb{fill:var(--ac)}
+.nf h1{margin:0 auto;font-size:clamp(34px,5vw,64px)}
+.dym{display:inline-flex;gap:8px;margin-top:6px;border:1px solid rgba(128,128,128,.5);border-radius:99px;padding:8px 18px;transition:.3s var(--ease)}.dym:hover{border-color:var(--ac);transform:translateY(-2px)}
+.nfs{position:relative;max-width:660px;margin:30px auto 0;text-align:left;color:var(--fg)}
+.nfs>svg{position:absolute;left:22px;top:20px;width:20px;height:20px;fill:none;stroke:var(--mut);stroke-width:2}
+.nfs input{width:100%;height:62px;padding:0 24px 0 56px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--fg);font:inherit;font-size:18px;outline:0;box-shadow:var(--sh);transition:.25s}.nfs input:focus{border-color:var(--ac);box-shadow:0 0 0 4px color-mix(in srgb,var(--ac) 25%,transparent)}
+.nfr{position:absolute;left:0;right:0;top:calc(100% + 10px);background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:22px;box-shadow:var(--sh);overflow:hidden;z-index:6}
+.nfr:empty{display:none}.nfr a{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:14px 20px;border-bottom:1px solid var(--line);transition:.2s}.nfr a:last-child{border:0}.nfr a.sel,.nfr a:hover{background:var(--bg2)}.nfr a span{color:var(--mut);font-size:13px;align-self:center}.nfr small{grid-column:1/-1;color:var(--mut)}.nr{padding:18px 22px;color:var(--mut)}
+.pop{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tkt{display:grid;grid-template-columns:minmax(200px,300px) 1fr;border-radius:32px;overflow:hidden;border:1px solid var(--line);background:var(--bg2)}
+.tkl{position:relative;background:linear-gradient(160deg,var(--inv),color-mix(in srgb,var(--inv) 62%,var(--ac)));color:var(--invf);display:grid;place-content:center;text-align:center;padding:40px;border-right:2px dashed color-mix(in srgb,var(--invf) 30%,transparent)}
+.tkl b{font-size:clamp(64px,8vw,108px);letter-spacing:-.06em;line-height:.9}.tkl span{letter-spacing:.3em;font-weight:700;opacity:.7}
+.tkl::before,.tkl::after{content:"";position:absolute;right:-14px;width:28px;height:28px;border-radius:50%;background:var(--bg)}.tkl::before{top:-14px}.tkl::after{bottom:-14px}
+.tkr{padding:40px;display:grid;gap:14px;align-content:center}.tkr h3{font-size:clamp(26px,3vw,38px);letter-spacing:-.04em}.tkr .mut{color:var(--mut)}
+.cod{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.cod code{font:700 22px ui-monospace,Menlo,monospace;letter-spacing:.14em;padding:12px 18px;border:2px dashed var(--ac);border-radius:14px;background:var(--bg)}
+.tm2{color:var(--mut)}.tm2 b{color:var(--fg);font-variant-numeric:tabular-nums}
+.cta2b{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.ok3{color:var(--ac);font-weight:600}
+.cpn{margin:-18px 0 28px;padding:10px 16px;border-radius:14px;background:color-mix(in srgb,var(--ac) 12%,transparent);border:1px solid color-mix(in srgb,var(--ac) 40%,transparent);display:inline-block}.cpn[hidden]{display:none}.cpn a{text-decoration:underline;color:var(--mut);margin-left:8px}
+.tot2{display:flex;justify-content:space-between;opacity:.85;font-size:15px;margin-top:auto}.tot2+.tot{margin-top:0}
+@media(max-width:960px){.pop{grid-template-columns:1fr 1fr}.tkt{grid-template-columns:1fr}.tkl{border-right:0;border-bottom:2px dashed color-mix(in srgb,var(--invf) 30%,transparent)}.tkl::before,.tkl::after{display:none}}
+@media(max-width:560px){.pop{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div id="ld"><div class="lt"></div><div class="lb"></div><div class="lc"><svg class="lm" viewBox="0 0 32 32"><rect pathLength="100" x=".6" y=".6" width="30.8" height="30.8" rx="9"/><path pathLength="100" d="M9 23V9l14 14V9"/></svg><div class="lw"><span style="--i:0">N</span><span style="--i:1">o</span><span style="--i:2">r</span><span style="--i:3">t</span><span style="--i:4">h</span><span style="--i:5">b</span><span style="--i:6">e</span><span style="--i:7">a</span><span style="--i:8">m</span></div></div><div class="ls2">Loading workspace</div><div class="ln"><b id="lnum">0</b><span>%</span></div><i class="lp"></i></div>
+<div id="bar"></div><div id="cur"></div><div class="modal" id="co"></div>
+<header class="top" id="top"><a class="logo" href="index.html"><svg class="mk" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M9 23V9l14 14V9" stroke="var(--bg)" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Northbeam</span></a><nav class="nav" id="nav"></nav><div class="tools"><button class="ico" id="sbtn" title="Search (Ctrl+K)">⌕ <span>Search</span> <kbd>Ctrl K</kbd></button><button class="ico" id="tbtn" title="Theme">◐</button><button class="ico" id="gbtn" title="Settings">⚙</button><span class="au" id="au"></span><button class="ico burger" id="bbtn">☰</button></div><div class="mega" id="mega"></div></header>
+<main id="view"></main>
+<footer class="foot" id="foot"></footer>
+<div class="modal" id="search"><div class="box"><input id="q" placeholder="Search all sections…" autocomplete="off"><ul id="res"></ul></div></div>
+<aside class="panel" id="panel"><h3>Settings <button class="ico" id="gx">✕</button></h3>
+<label>Theme</label><div class="seg" id="optTheme"><button data-v="light">Light</button><button data-v="dark">Dark</button><button data-v="auto">Auto</button></div>
+<label>Accent color</label><div class="sw" id="optAcc"></div>
+<label>Corners</label><div class="seg" id="optRad"><button data-v="0">Sharp</button><button data-v="12">Medium</button><button data-v="22">Soft</button></div>
+<label>Motion</label><div class="seg" id="optMot"><button data-v="1">On</button><button data-v="0">Off</button></div>
+<button class="btn ghost" id="reset" style="justify-content:center;margin-top:12px">Reset</button></aside>
+<script>
+window.PAGE=25;
+const SL=["index.html", "dashboards.html", "workspaces.html", "projects.html", "tasks.html", "reports.html", "metrics.html", "funnels.html", "cohorts.html", "forecasts.html", "workflows.html", "triggers.html", "templates.html", "schedules.html", "bots.html", "catalog.html", "api.html", "webhooks.html", "sdk.html", "marketplace.html", "sso.html", "permissions.html", "audit.html", "encryption.html", "compliance.html", "members.html", "collaboration.html", "comments.html", "notifications.html", "calendar.html", "docs.html", "blog.html", "customers.html", "academy.html", "community.html", "pricing.html", "about.html", "support.html", "status.html", "contact.html"];const TAR=SL[35],DEMO=SL[1];const ICON=["<path d=\"M13 2 3 14h9l-1 8 10-12h-9l1-8z\"/>", "<rect x=\"2\" y=\"6\" width=\"20\" height=\"12\" rx=\"2\"/><path d=\"M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8\"/>", "<path d=\"M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>", "<rect x=\"4\" y=\"11\" width=\"16\" height=\"10\" rx=\"2\"/><path d=\"M8 11V7a4 4 0 0 1 8 0v4\"/>", "<rect x=\"7\" y=\"2\" width=\"10\" height=\"20\" rx=\"2\"/><path d=\"M12 18h.01\"/>", "<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8\"/>", "<path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3\"/>", "<path d=\"M21 12a9 9 0 1 1-3-6.7M21 3v6h-6\"/>", "<circle cx=\"12\" cy=\"12\" r=\"10\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"m4.9 4.9 4.2 4.2m5.8 5.8 4.2 4.2m0-14.2-4.2 4.2m-5.8 5.8-4.2 4.2\"/>"];const LOGO="<svg class=\"mk\" viewBox=\"0 0 32 32\"><rect width=\"32\" height=\"32\" rx=\"9\" fill=\"currentColor\"/><path d=\"M9 23V9l14 14V9\" stroke=\"var(--bg)\" stroke-width=\"2.6\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>Northbeam</span>";
+const G=[["Platform", ["Overview", "Dashboards", "Workspaces", "Projects", "Tasks"]], ["Analytics", ["Reports", "Metrics", "Funnels", "Cohorts", "Forecasts"]], ["Automation", ["Workflows", "Triggers", "Templates", "Schedules", "Bots"]], ["Integrations", ["Catalog", "API", "Webhooks", "SDK", "Marketplace"]], ["Security", ["SSO", "Permissions", "Audit", "Encryption", "Compliance"]], ["Team", ["Members", "Collaboration", "Comments", "Notifications", "Calendar"]], ["Resources", ["Docs", "Blog", "Customers", "Academy", "Community"]], ["Company", ["Pricing", "About", "Support", "Status", "Contact"]]];
+const P=[];G.forEach((g,gi)=>g[1].forEach((n,i)=>P.push({id:`${gi+1}-${i+1}`,g:g[0],gi,n,f:SL[P.length]})));
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const ACC={"ink": ["#0a0a0a", "#f4f4f4"], "indigo": ["#4f46e5", "#818cf8"], "emerald": ["#059669", "#34d399"], "amber": ["#d97706", "#fbbf24"], "rose": ["#e11d48", "#fb7185"], "sky": ["#0284c7", "#38bdf8"]};
+const D={theme:"light",acc:"indigo",rad:"12",mot:"1"};
+let S={...D,...JSON.parse((()=>{try{return localStorage.getItem("nb")||"{}"}catch(e){return"{}"}})())};
+const save=()=>{try{localStorage.setItem("nb",JSON.stringify(S))}catch(e){}};
+const lum=h=>{const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]};
+const fav=c=>"data:image/svg+xml,"+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="${c}"/><path d="M9 23V9l14 14V9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`);
+function apply(){
+ const dark=S.theme==="auto"?matchMedia("(prefers-color-scheme:dark)").matches:S.theme==="dark";
+ const r=document.documentElement;r.dataset.theme=dark?"dark":"light";
+ const a=ACC[S.acc]||ACC[D.acc],c=a[dark?1:0];r.style.setProperty("--ac",c);r.style.setProperty("--acon",lum(c)>.3?"#0a0a0a":"#fff");
+ r.style.setProperty("--r",S.rad+"px");r.classList.toggle("noanim",S.mot==="0");
+ const f=$("#fav");f&&(f.href=fav(S.acc==="ink"?"#0a0a0a":a[0]));
+ $$("#optTheme button").forEach(b=>b.classList.toggle("on",b.dataset.v===S.theme));
+ $$("#optRad button").forEach(b=>b.classList.toggle("on",b.dataset.v===S.rad));
+ $$("#optMot button").forEach(b=>b.classList.toggle("on",b.dataset.v===S.mot));
+ $$("#optAcc button").forEach(b=>b.classList.toggle("on",b.dataset.v===S.acc));save();}
+
+const DESC={Overview:"Everything you run, in one calm view",Dashboards:"Live boards for the numbers that matter",Workspaces:"Separate spaces for teams and clients",Projects:"Plans, milestones and deadlines without chaos",Tasks:"Lists, boards and timelines on shared data",Reports:"Ready-made reports in a single click",Metrics:"Thousands of signals, live",Funnels:"See exactly where customers drop off",Cohorts:"Retention and behavior by group",Forecasts:"Models that look ahead",Workflows:"Visual automations, no code",Triggers:"React to events instantly",Templates:"Proven processes to start fast",Schedules:"Run on time and on condition",Bots:"Assistants for repetitive work",Catalog:"300+ ready-made connections",API:"A simple, predictable REST API",Webhooks:"Real-time events into your systems",SDK:"Libraries for popular languages",Marketplace:"Extensions from partners and the community",SSO:"One sign-in through your provider",Permissions:"Access down to a single object",Audit:"A complete log of every action",Encryption:"Data protected in transit and at rest",Compliance:"SOC 2, ISO 27001 and GDPR",Members:"Invites, groups and profiles",Collaboration:"Edit together in real time",Comments:"Conversations right next to the work",Notifications:"Only what matters, when it matters",Calendar:"Every deadline on one grid",Docs:"Guides to get you started fast",Blog:"Notes on focus and teamwork",Customers:"Stories with real numbers",Academy:"Courses and certification",Community:"Thousands of people in touch",Pricing:"Transparent plans, no surprises",About:"The team, mission and values",Support:"Real people, answers within hours",Status:"Uptime and incident history",Contact:"Write to us, we are listening"};
+const mockup=()=>`<div class="shot"><div class="bar"><i></i><i></i><i></i></div><div class="app"><div class="side"><span>Overview</span><span>Tasks</span><span>Docs</span><span>Reports</span><span>Team</span><span>Settings</span></div><div class="mainp"><div class="kpis"><div>Revenue<strong data-n="482" data-p="$" data-s="K">0</strong></div><div>Active users<strong data-n="12840">0</strong></div><div>Conversion<strong data-n="6.4" data-s="%">0</strong></div></div><div class="chart">${[38,52,46,68,60,82,74,92,86,100,94,98].map((h,i)=>`<i style="--h:${h}%;--i:${i}"></i>`).join("")}</div></div></div></div>`;
+const faq=l=>l.map(([a,b])=>`<details class="rv"><summary>${a}</summary><p>${b}</p></details>`).join("");
+const FAQ=[["Is the Free plan really free?","Yes. No card needed, and you can stay on it as long as you like."],["Can I switch plans later?","Anytime. Upgrades apply right away and downgrades at the end of the month."],["Do you offer a discount?","Business is currently $59 per month instead of $129, a 54% saving."],["Is my data safe?","Data is encrypted in transit and at rest, and Business adds SSO and audit logs."]];
+const CTA=`<div class="w"><div class="fin rv"><h2>Try Northbeam free today.</h2><p>No card needed. Upgrade whenever your team grows.</p><a class="btn inv" href="auth.html#signup">Create free account <i>→</i></a></div></div>`;
+const WHY=[["Fast by design","Pages open instantly and search answers in under a second."],["Keyboard first","Every action has a shortcut, so your hands never leave the keys."],["Accessible","High contrast, clear focus and full screen reader support."],["Private by default","Your workspace is yours. We never sell or share your data."],["Mobile ready","Phone, tablet or desktop, the layout adapts and stays in sync."],["Made for teams","Roles, mentions and comments keep everyone on the same page."],["Export anytime","Take your data with you in open formats whenever you like."],["Always improving","We ship updates every week and publish every change."],["Human support","Real people answer your questions, usually within a few hours."]];
+const eb=(e,t,s)=>`<p class="eyebrow rv">${e}</p><h2 class="rv">${t}</h2><p class="sub rv">${s||""}</p>`;
+const PRICING=()=>`<div class="sec w" id="pricing" style="padding-top:0">${eb("Pricing","Pricing that scales with you.")}<div class="bill rv"><div class="seg2" id="bill" data-b="m"><i></i><button data-bill="m" class="on">Monthly</button><button data-bill="y">Yearly <em>−20%</em></button></div></div><p class="cpn" id="cpn" hidden></p><div class="pr">
+<div class="pc rv"><h3>Free</h3><div class="pp">$0<small>/month</small></div><small class="bnote">Free forever</small><ul><li>Up to 3 projects</li><li>1 GB storage</li><li>Community support</li></ul><a class="btn ghost" href="auth.html#signup">Start free</a></div>
+<div class="pc f rv" style="--d:.1s"><h3>Pro</h3><div class="pp"><span class="amt" data-m="29" data-y="23">$29</span><small>/month</small></div><small class="bnote" data-m="Billed monthly" data-y="Billed $276 per year">Billed monthly</small><ul><li>Unlimited projects</li><li>100 GB storage</li><li>Integrations</li><li>Priority support</li></ul><a class="btn" href="#pricing" data-plan="pro">Choose Pro</a></div>
+<div class="pc rv" style="--d:.2s"><span class="tag">−54%</span><h3>Business</h3><div class="pp"><s>$129</s><span class="amt" data-m="59" data-y="47">$59</span><small>/month</small></div><small class="bnote" data-m="Billed monthly" data-y="Billed $564 per year">Billed monthly</small><ul><li>Single sign-on</li><li>Audit logs</li><li>1 TB storage</li><li>Dedicated support</li></ul><a class="btn" href="#pricing" data-plan="business">Choose Business</a></div></div></div>
+<div class="sec w" style="padding-top:0">${eb("Compare","Compare plans in detail.")}<div class="tw rv"><table><thead><tr><th></th><th>Free</th><th>Pro</th><th>Business</th></tr></thead><tbody>${[["Projects","3","Unlimited","Unlimited"],["Storage","1 GB","100 GB","1 TB"],["Integrations","—","✓","✓"],["Single sign-on","—","—","✓"],["Audit logs","—","—","✓"],["Support","Community","Priority","Dedicated"],["Price","$0",'<span class="amt" data-m="29" data-y="23">$29</span>','<span class="amt" data-m="59" data-y="47">$59</span>']].map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div></div>
+`;
+function home(){const T=[["Amira K.","Product lead, Northwind","We dropped three tools in the first week. Everyone just knows where things are now."],["Daniel R.","Founder, Halcyon","The interface is so calm that planning actually feels good. Dark mode is perfect."],["Sofia M.","Engineering manager, Lumen","Our weekly status meeting is gone. The updates feed replaced it completely."]],LG=["Northwind","Halcyon","Lumen","Parallax","Quill","Fathom"];
+return `<div class="hero"><span class="pill rv"><b>New</b> Northbeam 4.0 is here</span>
+<h1>One calm workspace for <em>the whole team.</em></h1>
+<p class="lead rv">Analytics, automation and collaboration on a single quiet screen, so your team spends less time switching tabs and more time shipping.</p>
+<div class="cta rv"><a class="btn" href="auth.html#signup">Start free <i>→</i></a><a class="btn ghost" href="${DEMO}">Take the tour</a></div><p class="note rv">No card needed · Set up in 5 minutes</p>
+<div class="mq"><div>${[...LG,...LG,...LG,...LG].map(x=>`<span>${x}</span>`).join("")}</div></div></div>
+<div class="sec w">${eb("Features","Everything your team needs. Nothing it doesn't.","Three foundations behind everyday work.")}
+<div class="bento">${[["Tasks that stay out of your way","Lists, boards and timelines share the same data. Switch views without losing context.",["Drag-and-drop boards","Owners and due dates","Automatic status updates"],"90%"],["Docs written beside the work","A clean editor with comments, history and live cursors. Link any line to a task.",["Real-time editing","Comments and mentions","Full version history"],"70%"],["Updates instead of meetings","One feed for progress, decisions and announcements. Everyone sees the same story.",["Weekly digests","Threaded discussions","Read receipts"],"55%"]].map((c,i)=>`<div class="bc rv" style="--d:${i*.1}s"><div class="viz"><b style="--w:${c[3]}"></b><b style="--w:40%"></b><b style="--w:65%"></b><b style="--w:30%"></b></div><h3>${c[0]}</h3><p>${c[1]}</p><ul class="ls">${c[2].map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("")}</div></div>
+<div class="band"><div class="w"><p class="eyebrow rv">By the numbers</p><div class="stats rv"><div><strong data-n="12000" data-s="+">0</strong><span>teams run on Northbeam</span></div><div><strong data-n="4.9">0</strong><span>average rating</span></div><div><strong data-n="99.99" data-s="%">0</strong><span>uptime</span></div><div><strong data-n="2400000">0</strong><span>tasks done every week</span></div></div></div></div>
+<div class="sec w">${eb("Get started","Up and running in minutes.")}<div class="steps">${[["Create your workspace","Sign up free and invite your team with a link."],["Bring your work","Import tasks and docs from the tools you use today."],["Ship together","Plan, write and share updates in one place."]].map((s,i)=>`<div class="st rv" style="--d:${i*.12}s"><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("")}</div></div>
+<div class="sec w" style="padding-top:0">${eb("Reviews","Teams love the quiet.")}<div class="tg">${T.map((x,i)=>`<div class="tc rv" style="--d:${i*.1}s"><q>${x[2]}</q><div class="who"><div class="av">${x[0][0]}</div><div><b>${x[0]}</b>${x[1]}</div></div></div>`).join("")}</div></div>
+<div class="sec w" style="padding-top:0">${eb("Why Northbeam","Why teams switch.")}<div class="wg">${WHY.map((x,i)=>`<div class="wi rv" style="--d:${(i%3)*.08}s"><span class="n">0${i+1}</span><div class="gl"><svg viewBox="0 0 24 24">${ICON[i]}</svg></div><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}</div></div>
+<div class="sec w" style="padding-top:0">${eb("Navigator","All 40 sections.")}<div class="all">${G.map((g,gi)=>`<div class="rv" style="--d:${(gi%4)*.08}s"><h4>${g[0]}</h4>${P.filter(p=>p.gi===gi).map(p=>`<a href="${p.f}">${p.n}</a>`).join("")}</div>`).join("")}</div></div>
+<div class="sec w" style="padding-top:0">${eb("Changelog","What we shipped lately.")}<div class="cl">${[["2.4","Calendar view","See every deadline on one clean monthly grid."],["2.3","Faster search","Results now appear as you type, twice as fast."],["2.2","Dark mode refresh","Better contrast and smoother theme switching."],["2.1","Doc comments","Comment on any line and resolve threads together."],["2.0","New workspace","A calmer layout with a single sidebar."],["1.9","Integrations hub","Connect your favorite tools from one page."]].map((c,i)=>`<div class="cc rv" style="--d:${(i%3)*.08}s"><small>v${c[0]}</small><h3>${c[1]}</h3><p>${c[2]}</p></div>`).join("")}</div></div>
+<div class="sec w" style="padding-top:0"><p class="eyebrow rv">FAQ</p><h2 class="rv" style="margin-bottom:40px">Questions, answered.</h2>${faq(FAQ)}</div>
+<div class="w"><div class="fin rv"><h2>Get product news.</h2><p>One short email a month. No spam, ever.</p><div class="nl"><input placeholder="you@company.com"><button class="btn inv">Subscribe</button></div></div></div><div style="height:110px"></div>
+${PRICING()}`}
+const wnd=(t,h)=>`<div class="shot"><div class="bar"><i></i><i></i><i></i><span class="wt">${t}</span></div><div class="wb">${h}</div></div>`;
+const rows=(t,r,tog)=>wnd(t,`<div class="rw">${r.map((x,i)=>`<div class="r" style="animation-delay:${i*.12}s"><span class="av2">${x[0][0]}</span><div><b>${x[0]}</b><small>${x[1]}</small></div>${tog?`<span class="tg2${i%3==1?"":" on"}"></span>`:`<em>${x[2]||""}</em>`}</div>`).join("")}</div>`);
+const tiles=(t,a)=>wnd(t,`<div class="tl">${a.map(x=>`<div class="t"><span>${x[0][0]}</span><b>${x[0]}</b><small>${x[1]}</small></div>`).join("")}</div>`);
+const table=(t,h,r)=>wnd(t,`<table class="mt"><thead><tr>${h.map(x=>`<th>${x}</th>`).join("")}</tr></thead><tbody>${r.map(x=>`<tr>${x.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>`);
+const term=(t,l)=>wnd(t,`<pre class="tm">${l.map((x,i)=>`<span style="--i:${i}">${x}</span>`).join("")}</pre>`);
+const chat=(t,m)=>wnd(t,`<div class="ch">${m.map((x,i)=>`<div class="b ${x[0]?"me":""}" style="--i:${i}">${x[1]}</div>`).join("")}</div>`);
+const vKan=()=>wnd("Sprint board",`<div class="kan">${[["Backlog",["Design tokens","Audit log UI","Import CSV"]],["In progress",["Mega menu","Search v2"]],["Review",["Dark mode polish"]],["Done",["Onboarding","Billing","SSO"]]].map((c,ci)=>`<div class="kc"><h5>${c[0]}<b>${c[1].length}</b></h5>${c[1].map((t,i)=>`<div class="kt" style="--i:${ci+i}"><i></i>${t}</div>`).join("")}</div>`).join("")}</div>`);
+const vGantt=()=>wnd("Launch plan",`<div class="gt">${[["Research",0,30],["Design",20,40],["Build",35,55],["QA",70,20],["Launch",88,12]].map((x,i)=>`<div class="g"><span>${x[0]}</span><div><i style="--l:${x[1]}%;--w:${x[2]}%;--i:${i}"></i></div></div>`).join("")}</div>`);
+const P2=(a,o=0,w=560,h=200,n=12)=>a.map((v,i)=>(i?"L":"M")+((i+o)*w/(n-1)).toFixed(1)+" "+(h-v*h/100).toFixed(1)).join(" ");
+const vLine=f=>wnd(f?"Forecast":"Metrics",`<svg class="lnc" viewBox="0 0 560 200"><path class="gr" d="M0 50H560M0 100H560M0 150H560"/><path class="l1" d="${P2([22,30,28,42,40,55,52,66])}"/><path class="l2" d="${f?P2([66,70,78,82,90],7):P2([14,22,26,30,34,38,46,50])}"/></svg>`);
+const vSpark=()=>wnd("Dashboards",`<div class="sp4">${[["Revenue","$482K",[3,5,4,7,6,9,8,10]],["Sessions","98.2K",[5,4,6,5,8,7,9,9]],["Churn","1.8%",[9,8,8,6,6,5,4,3]],["NPS","72",[4,5,5,6,7,7,8,9]]].map(c=>`<div class="sc"><small>${c[0]}</small><b>${c[1]}</b><div class="mb">${c[2].map((v,j)=>`<i style="--h:${v*10}%;--i:${j}"></i>`).join("")}</div></div>`).join("")}</div>`);
+const vFunnel=()=>wnd("Signup funnel",`<div class="fn">${[["Visited",100],["Signed up",62],["Activated",38],["Subscribed",14]].map((x,i)=>`<div class="fnr"><span>${x[0]}</span><div><i style="--w:${x[1]}%;--i:${i}"></i></div><b>${x[1]}%</b></div>`).join("")}</div>`);
+const vCohort=()=>wnd("Retention",`<div class="co"><div class="ch0"><span></span>${["W0","W1","W2","W3","W4","W5","W6"].map(x=>`<span>${x}</span>`).join("")}</div>${[100,92,88,81,77,70].map((s,r)=>`<div class="cr0"><span>Oct ${r*7+1}</span>${Array.from({length:7},(_,c)=>{const v=Math.max(12,s-c*9);return c<=6-r?`<i class="${v>55?"hi":""}" style="--a:${v/100};--i:${r+c}">${v}</i>`:`<i class="e"></i>`}).join("")}</div>`).join("")}</div>`);
+const vFlow=()=>wnd("Workflow editor",`<svg class="fl" viewBox="0 0 560 220"><path d="M130 110H165C200 110 200 50 230 50M130 110H165C200 110 200 170 230 170M350 50C385 50 385 110 420 110M350 170C385 170 385 110 420 110"/>${[[20,90,"New signup"],[230,30,"Send welcome"],[230,150,"Create trial"],[420,90,"Notify team"]].map(n=>`<g><rect x="${n[0]}" y="${n[1]}" width="${n[2]=="Notify team"||n[2]=="New signup"?110:120}" height="40" rx="12"/><text x="${n[0]+(n[2]=="Notify team"||n[2]=="New signup"?55:60)}" y="${n[1]+25}">${n[2]}</text></g>`).join("")}<circle r="5"><animateMotion dur="3.6s" repeatCount="indefinite" path="M130 110H165C200 110 200 50 230 50H350C385 50 385 110 420 110"/></circle><circle r="5" opacity=".5"><animateMotion dur="3.6s" begin="1.8s" repeatCount="indefinite" path="M130 110H165C200 110 200 170 230 170H350C385 170 385 110 420 110"/></circle></svg>`);
+const vMatrix=()=>wnd("Roles and permissions",`<table class="mt mx"><thead><tr><th></th>${["Owner","Admin","Editor","Viewer"].map(x=>`<th>${x}</th>`).join("")}</tr></thead><tbody>${[["View projects","1111"],["Edit tasks","1110"],["Manage billing","1100"],["Invite members","1100"],["Delete workspace","1000"]].map(r=>`<tr><td>${r[0]}</td>${[...r[1]].map(c=>`<td>${c=="1"?'<span class="ck1">✓</span>':'<span class="ck0">—</span>'}</td>`).join("")}</tr>`).join("")}</tbody></table>`);
+const vKeys=()=>wnd("Encryption",`<div class="ky"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="90"/><circle cx="100" cy="100" r="66"/><circle cx="100" cy="100" r="42"/><rect x="78" y="94" width="44" height="34" rx="7"/><path d="M86 94V84a14 14 0 0 1 28 0v10"/></svg><div>${[["In transit","TLS 1.3"],["At rest","AES-256"],["Keys","Rotated every 90 days"]].map(x=>`<p><small>${x[0]}</small><b>${x[1]}</b></p>`).join("")}</div></div>`);
+const vDoc=()=>wnd("Q4 plan, live",`<div class="dc"><h4>Q4 launch plan</h4>${[90,100,70,95,60,80].map(w=>`<i style="--w:${w}%"></i>`).join("")}<span class="cu" style="--x:62%;--y:44px"><em>Maya</em></span><span class="cu c2" style="--x:28%;--y:104px"><em>Leo</em></span></div>`);
+const vToasts=()=>wnd("Notifications",`<div class="ts">${[["Maya commented","on Pricing page · 2m"],["Deploy finished","Production · 14m"],["Task assigned to you","Fix mega menu · 1h"],["Weekly digest ready","12 updates · 3h"]].map((x,i)=>`<div class="to" style="--i:${i}"><span class="dt"></span><div><b>${x[0]}</b><small>${x[1]}</small></div></div>`).join("")}</div>`);
+const vCal=()=>wnd("October 2026",`<div class="cl7">${["M","T","W","T","F","S","S"].map(x=>`<b>${x}</b>`).join("")}${Array.from({length:35},(_,i)=>{const d=i-2,ev={4:"Kickoff",9:"Design review",15:"Sprint demo",22:"Launch",26:"Retro"}[d],o=d<1||d>31;return `<div class="${o?"o":""}"><small>${d<1?30+d:d>31?d-31:d}</small>${ev?`<em>${ev}</em>`:""}</div>`}).join("")}</div>`);
+const vDocs=()=>wnd("docs.northbeam.dev",`<div class="dx"><div class="sd">${["Getting started","Authentication","Projects","Webhooks","Errors"].map((x,i)=>`<span class="${i==1?"on":""}">${x}</span>`).join("")}</div><div class="ar"><h4>Authentication</h4><i style="--w:92%"></i><i style="--w:78%"></i><pre>Authorization: Bearer nb_live_...</pre><i style="--w:86%"></i><i style="--w:55%"></i></div></div>`);
+const vPosts=()=>wnd("Blog",`<div class="ps">${[["Why calm software wins","6 min"],["Meetings are a bug","4 min"],["Shipping weekly","8 min"]].map((x,i)=>`<div class="p" style="--i:${i}"><div class="im"></div><b>${x[0]}</b><small>${x[1]} read</small></div>`).join("")}</div>`);
+const vWins=()=>wnd("Results",`<div class="wn">${[["Northwind","+212%","faster planning"],["Halcyon","−60%","status meetings"],["Lumen","3.4×","release velocity"]].map((x,i)=>`<div style="--i:${i}"><small>${x[0]}</small><b>${x[1]}</b><span>${x[2]}</span></div>`).join("")}</div>`);
+const vCourses=()=>wnd("Academy",`<div class="cs">${[["Northbeam basics",100],["Automation lab",64],["Advanced analytics",32],["Admin certification",8]].map((x,i)=>`<div><span>${x[0]}</span><div class="pb"><i style="--w:${x[1]}%;--i:${i}"></i></div><b>${x[1]}%</b></div>`).join("")}</div>`);
+const vTime=()=>wnd("Our story",`<div class="tn">${[["2021","Founded in a small flat"],["2022","First 1,000 teams"],["2024","Series A, 40 people"],["2026","Northbeam 4.0"]].map((x,i)=>`<div style="--i:${i}"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("")}</div>`);
+const vUp=()=>wnd("System status",`<div class="up">${["API","Web app","Automations","Webhooks"].map((s,r)=>`<div><span>${s}</span><div>${Array.from({length:40},(_,i)=>`<i class="${(r*13+i*7)%37==5?"w":""}" style="--i:${i}"></i>`).join("")}</div><b>99.9${9-r}%</b></div>`).join("")}</div>`);
+const vForm=()=>wnd("Contact",`<form class="cf2" onsubmit="event.preventDefault();this.innerHTML='<div class=ok2>✓ Message sent (demo). We reply within a day.</div>'"><input placeholder="Your name"><input placeholder="Email"><textarea placeholder="How can we help?"></textarea><button class="btn">Send message <i>→</i></button></form>`);
+const VIS={Overview:mockup,Dashboards:vSpark,Workspaces:()=>rows("Workspaces",[["Marketing","24 members","Active"],["Engineering","68 members","Active"],["Design","12 members","Active"],["Clients","9 guests","Shared"]]),Projects:vGantt,Tasks:vKan,
+Reports:()=>table("Reports",["Report","Owner","Updated","Status"],[["Weekly revenue","Maya","2m ago","Ready"],["Churn analysis","Leo","1h ago","Ready"],["Q4 forecast","Ana","Today","Draft"],["Funnel audit","Ravi","Yesterday","Ready"]]),Metrics:()=>vLine(0),Funnels:vFunnel,Cohorts:vCohort,Forecasts:()=>vLine(1),
+Workflows:vFlow,Triggers:()=>rows("Rules",[["Task created","Notify channel"],["Status → Done","Send digest"],["Due date passed","Escalate to lead"],["New member joins","Welcome message"]],1),
+Templates:()=>tiles("Templates",[["Product roadmap","12 steps"],["Sprint planning","8 steps"],["Client onboarding","10 steps"],["Incident review","6 steps"],["Content calendar","9 steps"],["Hiring pipeline","11 steps"]]),
+Schedules:()=>table("Schedules",["Job","Cron","Next run","State"],[["Weekly digest","0 9 * * 1","Mon 09:00","Active"],["Backup","0 2 * * *","Tomorrow 02:00","Active"],["Cleanup","0 0 1 * *","Nov 1","Paused"],["Sync CRM","*/15 * * * *","in 9 min","Active"]]),
+Bots:()=>chat("Assistant",[[0,"Summarize today's updates"],[1,"12 tasks closed, 3 blocked. Want the blockers?"],[0,"Yes, assign them to Maya"],[1,"Assigned 3 tasks to Maya ✓"]]),
+Catalog:()=>tiles("Integrations",[["Slack","Messaging"],["GitHub","Code"],["Google Drive","Files"],["Stripe","Payments"],["Notion","Docs"],["Figma","Design"]]),
+Webhooks:()=>term("Event stream",["<b>POST</b> https://app.acme.com/hooks/nb",'{ "event": "task.completed", "id": "tsk_8f2a" }',"<u>→ 200 OK · 42 ms</u>","<b>POST</b> https://app.acme.com/hooks/nb",'{ "event": "member.invited" }',"<u>→ 200 OK · 38 ms</u>"]),
+SDK:()=>term("Install",["$ <b>pip</b> install northbeam","$ <b>npm</b> install @northbeam/sdk","$ <b>vcpkg</b> install northbeam","","<u>✓ installed in 1.2s</u>"]),
+Marketplace:()=>tiles("Marketplace",[["Time Tracker","★ 4.9"],["Gantt Pro","★ 4.8"],["AI Summaries","★ 4.9"],["Invoice Sync","★ 4.7"],["Pomodoro","★ 4.6"],["Roadmap Pro","★ 4.8"]]),
+Permissions:vMatrix,Audit:()=>table("Audit log",["Time","Actor","Action","IP"],[["10:42","maya@acme","Changed role: Leo → Admin","84.12.x.x"],["10:31","leo@acme","Exported report","84.12.x.x"],["09:58","system","Key rotated","—"],["09:12","ana@acme","Signed in (SSO)","91.4.x.x"]]),Encryption:vKeys,
+Compliance:()=>tiles("Certifications",[["SOC 2","Type II"],["ISO 27001","Certified"],["GDPR","Compliant"],["HIPAA","Ready"],["CCPA","Compliant"],["PCI DSS","Level 1"]]),
+Members:()=>rows("Members",[["Maya Chen","Product · Admin","Owner"],["Leo Park","Engineering","Editor"],["Ana Silva","Design","Editor"],["Ravi Nair","Finance","Viewer"]]),Collaboration:vDoc,
+Comments:()=>chat("Thread · Pricing page",[[0,"Can we shorten the Pro list?"],[1,"Agreed, cutting it to four lines."],[0,"Also swap the order of Free and Pro?"],[1,"Done. Resolving this thread ✓"]]),Notifications:vToasts,Calendar:vCal,Docs:vDocs,Blog:vPosts,Customers:vWins,Academy:vCourses,
+Community:()=>rows("Community",[["How do you run weekly reviews?","42 replies","Hot"],["Show and tell: our automation","18 replies","New"],["Tips for Ctrl+K search","31 replies","Tips"]]),
+Pricing:()=>"",About:vTime,Support:()=>chat("Support chat",[[0,"Hi, can I move my data?"],[1,"Sure! Export takes about a minute. Sending the steps."],[0,"Thank you!"],[1,"Anytime. Rated 4.9 by 12,000 teams."]]),Status:vUp,Contact:vForm};
+const H={Overview:"Your whole business,|in one calm view.",Dashboards:"Numbers that matter,|front and center.",Workspaces:"A space for every|team and client.",Projects:"Plans that survive|contact with reality.",Tasks:"Tasks that stay|out of your way.",Reports:"Reports that write|themselves.",Metrics:"Every signal,|live and legible.",Funnels:"Find the leak|before it costs you.",Cohorts:"See who stays,|and why.",Forecasts:"Look ahead with|confidence.",Workflows:"Automate the boring|parts. Visually.",Triggers:"When this happens,|do that.",Templates:"Start from proven|processes.",Schedules:"Right job, right time,|every time.",Bots:"Assistants that|do the busywork.",Catalog:"Plug into the tools|you already use.",API:"One API.|Every language.",Webhooks:"Real-time events,|straight to your stack.",SDK:"Libraries that|feel native.",Marketplace:"Extend Northbeam|your way.",SSO:"Sign in once.|Work everywhere.",Permissions:"Exactly the access|each person needs.",Audit:"Every action,|on the record.",Encryption:"Locked down,|end to end.",Compliance:"Certified, so you|can relax.",Members:"The right people,|in the right place.",Collaboration:"Write together,|in real time.",Comments:"Conversations next|to the work.",Notifications:"Only what matters,|when it matters.",Calendar:"Every deadline|on one grid.",Docs:"Documentation you'll|actually read.",Blog:"Notes on focus|and teamwork.",Customers:"Real teams,|real results.",Academy:"Learn Northbeam|at your pace.",Community:"Thousands of people|in your corner.",Pricing:"Simple pricing,|no surprises.",About:"Built by people who|love calm software.",Support:"Real humans,|real fast.",Status:"Always up.|Always transparent.",Contact:"Say hello,|we're listening."};
+const F={Overview:["One home|Tasks, docs and metrics together","Always current|Live data, no stale sheets","Scales with you|From five to five thousand"],Dashboards:["Drag and drop|Build boards in seconds","Live widgets|Numbers refresh automatically","Share anywhere|Links, embeds and PDFs"],Workspaces:["Clean separation|Each team keeps its own space","Guest access|Invite clients safely","Shared templates|Standards across every space"],Projects:["Milestones|Break big goals into steps","Dependencies|See what blocks what","Timeline view|Plan on a visual schedule"],Tasks:["Boards and lists|Switch views, keep context","Quick capture|Add tasks with one shortcut","Smart statuses|Move work forward automatically"],
+Reports:["Scheduled delivery|Reports land in inboxes","Custom filters|Slice data any way","Export anywhere|CSV, PDF and live links"],Metrics:["Thousands of signals|Track everything that matters","Custom formulas|Define your own KPIs","Alerts|Know the moment things shift"],Funnels:["Step by step|Measure every conversion stage","Segment drop-off|Compare channels and cohorts","Fix fast|Jump from insight to action"],Cohorts:["Retention curves|Watch loyalty week by week","Behavior groups|Compare who does what","Plain-language insights|Understand, don't decode"],Forecasts:["Trend modeling|Projections from your own data","Scenario planning|Test what-if assumptions","Confidence bands|See the range, not a guess"],
+Workflows:["Visual builder|Drag steps onto a canvas","Branching logic|Handle every case","Run history|Debug with full traces"],Triggers:["Event driven|React to anything instantly","Conditions|Fire only when it matters","One-click toggles|Turn rules on or off"],Templates:["Proven starting points|Built from real team playbooks","Customizable|Make every template yours","Share across teams|One standard, many projects"],Schedules:["Cron or friendly|Write it however you like","Time zones|Runs when your team is awake","Safe retries|Failures recover on their own"],Bots:["Natural language|Ask in plain words","Runs in your tools|Slack, email and web","Always on|Handles work around the clock"],
+Catalog:["300+ connectors|Popular tools, ready to go","Two-way sync|Data flows both directions","Setup in minutes|No engineers required"],Webhooks:["Signed payloads|Verify every request","Automatic retries|Never miss an event","Delivery logs|Inspect every call"],SDK:["Typed clients|Autocomplete and safety","Idiomatic code|Feels native in each language","Open source|Read it, fork it, improve it"],Marketplace:["Community extensions|Built by people like you","Vetted and rated|Reviews you can trust","Publish your own|Share with every team"],
+Permissions:["Role based|Owner, admin, editor, viewer","Object level|Lock down a single doc","Custom roles|Fit your org chart"],Audit:["Every action logged|Who did what, and when","Tamper evident|Records that can't be edited","Export to SIEM|Stream logs to your tools"],Encryption:["TLS 1.3 in transit|Modern protection on the wire","AES-256 at rest|Every byte encrypted","Customer-managed keys|You hold the keys"],Compliance:["SOC 2 Type II|Audited every year","GDPR ready|Data processing agreements included","Data residency|Choose where data lives"],
+Members:["Easy invites|Add a team in one click","Groups|Organize people by function","Profiles|Know who does what"],Collaboration:["Live cursors|See teammates as they type","Presence|Know who's here right now","Version history|Roll back any change"],Comments:["Inline threads|Discuss the exact line","Mentions|Pull the right person in","Resolve and archive|Keep threads tidy"],Notifications:["Smart digests|Batched, never noisy","Per-channel rules|Email, push or Slack","Quiet hours|Respect time off"],Calendar:["All deadlines|One grid for the team","Two-way sync|Google and Outlook calendars","Drag to reschedule|Move work in one motion"],
+Docs:["Searchable|Find any answer fast","Code samples|Copy, paste, ship","Always current|Updated with each release"],Blog:["Practical essays|Ideas you can use Monday","Product updates|What shipped and why","Team stories|How others work"],Customers:["Real numbers|Results from live teams","Deep dives|Full stories, start to finish","Any industry|From startups to enterprise"],Academy:["Short lessons|Learn in ten minutes","Hands-on labs|Practice in a safe sandbox","Certificates|Show off your skills"],Community:["Ask anything|Get answers from experts","Show and tell|Share what you've built","Events|Meetups and live Q&As"],
+Pricing:["Free forever|Start without a card","Pay as you grow|Upgrade only when needed","Cancel anytime|No lock-in, no fees"],About:["Our mission|Make teamwork feel calm","Remote first|People across 20 countries","Independent|Profitable and customer funded"],Support:["Human answers|Replies within hours","Guided setup|We help you get started","Priority lanes|Faster help on paid plans"],Status:["Live uptime|Updated every minute","Incident history|Full transparency, always","Subscribe|Get alerts by email or SMS"],Contact:["Sales|Talk to a real person","Press|Media kits and interviews","Partners|Build something together"]};
+const GS=[[["12000","+","teams"],["99.99","%","uptime"],["40","+","sections"],["5"," min","to set up"]],[["1000","+","metrics"],["2.4"," s","average query"],["98","%","forecast accuracy"],["50","M","events a day"]],[["500","K","runs a day"],["120","+","templates"],["0","","lines of code"],["99.9","%","delivery"]],[["300","+","integrations"],["3","","SDK languages"],["40"," ms","median latency"],["99.99","%","API uptime"]],[["256","-bit","encryption"],["2","","audit reports"],["0","","breaches"],["24","/7","monitoring"]],[["12000","+","teams"],["20","+","time zones"],["1.2","M","comments a week"],["4.9","","average rating"]],[["500","+","articles"],["60","+","courses"],["30","K","community members"],["4.9","","docs rating"]],[["45","","people"],["20","+","countries"],["4.9","","rating"],["24","/7","support"]]];
+const band=g=>`<div class="band"><div class="w"><div class="stats rv">${GS[g].map(x=>`<div><strong data-n="${x[0]}" data-s="${x[1]}">0</strong><span>${x[2]}</span></div>`).join("")}</div></div></div>`;
+const rel=p=>`<div class="sec w"><p class="eyebrow rv">Related</p><h2 class="rv" style="margin-bottom:40px">See also.</h2><div class="cl">${P.filter(x=>x.gi===p.gi&&x!==p).slice(0,3).map(x=>`<a class="cc rv" href="${x.f}"><small>${x.g}</small><h3>${x.n}</h3><p>${DESC[x.n]}</p></a>`).join("")}</div></div>`;
+const crumb=p=>`<div class="crumb rv"><a href="index.html">Home</a> / ${p.g} / ${p.n}</div>`;
+const KW={py:"import|from|def|return|print|as|if|None|True|False|with",js:"const|let|await|async|if|throw|new|return|function|process",cpp:"include|static|int|void|char|const|if|return|auto|std|string|nullptr|size_t"};
+function hl(c,l){const e=c.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"),cm=l==="py"?"#.*":"\\/\\/.*";
+ return e.replace(new RegExp("("+cm+")|(R\"\\(.*?\\)\"|\"[^\"\\n]*\")|\\b("+KW[l]+")\\b|\\b(\\d+(?:\\.\\d+)?)\\b","g"),(m,a,b,k,n)=>a?`<span class="c">${a}</span>`:b?`<span class="s">${b}</span>`:k?`<span class="k">${k}</span>`:`<span class="n">${n}</span>`)}
+const CODE={Python:["py",`import requests
+
+API_KEY = "nb_live_xxxxxxxx"
+
+r = requests.post(
+    "https://api.northbeam.dev/v1/tasks",
+    headers={"Authorization": f"Bearer {API_KEY}"},
+    json={"title": "Ship 4.0", "project": "launch", "due": "2026-11-01"},
+    timeout=10,
+)
+r.raise_for_status()
+print(r.json()["id"])`],JavaScript:["js",`// Node 18+ or any modern browser
+const res = await fetch("https://api.northbeam.dev/v1/tasks", {
+  method: "POST",
+  headers: {
+    "Authorization": "Bearer " + process.env.NB_KEY,
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ title: "Ship 4.0", project: "launch", due: "2026-11-01" }),
+});
+if (!res.ok) throw new Error(await res.text());
+const task = await res.json();
+console.log(task.id);`],"C++":["cpp",`// build: g++ main.cpp -lcurl
+#include <curl/curl.h>
+#include <iostream>
+#include <string>
+
+static size_t sink(char* p, size_t s, size_t n, void* out) {
+    static_cast<std::string*>(out)->append(p, s * n);
+    return s * n;
+}
+
+int main() {
+    CURL* c = curl_easy_init();
+    std::string resp;
+    const char* body = R"({"title":"Ship 4.0","project":"launch"})";
+    curl_slist* h = nullptr;
+    h = curl_slist_append(h, "Authorization: Bearer YOUR_KEY");
+    h = curl_slist_append(h, "Content-Type: application/json");
+    curl_easy_setopt(c, CURLOPT_URL, "https://api.northbeam.dev/v1/tasks");
+    curl_easy_setopt(c, CURLOPT_HTTPHEADER, h);
+    curl_easy_setopt(c, CURLOPT_POSTFIELDS, body);
+    curl_easy_setopt(c, CURLOPT_WRITEFUNCTION, sink);
+    curl_easy_setopt(c, CURLOPT_WRITEDATA, &resp);
+    if (curl_easy_perform(c) == CURLE_OK) std::cout << resp << std::endl;
+    curl_slist_free_all(h);
+    curl_easy_cleanup(c);
+    return 0;
+}`]};
+const vCode=()=>wnd("POST /v1/tasks",`<div class="tabs">${Object.keys(CODE).map((k,i)=>`<button class="${i?"":"on"}" data-lang="${k}">${k}</button>`).join("")}<button class="cp" id="cp">Copy</button></div><pre class="code" id="cd">${hl(CODE.Python[1],"py")}</pre><div class="resp"><span>201 Created</span><pre>{ "id": "tsk_8f2a1c", "title": "Ship 4.0", "status": "open" }</pre></div>`);
+function apiPage(p){const nx=P[P.indexOf(p)+1];
+return `<div class="hero sp api"><div class="w spi"><div class="hl">${crumb(p)}<h1>One API. <em>Every language.</em></h1><p class="lead rv">A clean REST API with typed SDKs. Create your first task in under a minute, in the language you already write.</p><div class="cta rv"><a class="btn" href="${TAR}">Get an API key <i>→</i></a><a class="btn ghost" href="${nx.f}">Next: ${nx.n}</a></div><div class="idps rv" style="color:var(--mut)"><span>REST</span><span>JSON</span><span>OAuth 2.0</span><span>Python</span><span>JavaScript</span><span>C++</span></div></div><div class="hr">${vCode()}</div></div></div>
+<div class="sec w">${eb("Endpoints","Everything is a resource.","Predictable URLs, standard verbs, JSON in and out.")}<div class="tw rv"><table><thead><tr><th>Method</th><th>Path</th><th>What it does</th></tr></thead><tbody>${[["GET","/v1/tasks","List tasks"],["POST","/v1/tasks","Create a task"],["PATCH","/v1/tasks/{id}","Update a task"],["DELETE","/v1/tasks/{id}","Delete a task"],["GET","/v1/projects","List projects"],["POST","/v1/webhooks","Register a webhook"]].map(r=>`<tr><td><span class="mth ${r[0]}">${r[0]}</span></td><td><code>${r[1]}</code></td><td>${r[2]}</td></tr>`).join("")}</tbody></table></div></div>
+<div class="sec w" style="padding-top:0">${eb("SDKs","Install in one line.")}<div class="ins">${[["Python","pip install northbeam"],["JavaScript","npm install @northbeam/sdk"],["C++","vcpkg install northbeam"]].map((x,i)=>`<div class="rv" style="--d:${i*.1}s"><h3>${x[0]}</h3><p style="color:var(--mut)">Typed client with retries and pagination built in.</p><code>${x[1]}</code></div>`).join("")}</div></div>
+${band(3)}${rel(p)}<div style="height:110px"></div>${CTA}`}
+function ssoPage(p){const nx=P[P.indexOf(p)+1];
+const flow=`<svg viewBox="0 0 640 190"><g>${[[10,"Browser"],[265,"Northbeam"],[520,"Your IdP"]].map(n=>`<rect x="${n[0]}" y="64" width="110" height="52" rx="14"/><text x="${n[0]+55}" y="95">${n[1]}</text>`).join("")}</g><path id="a1" d="M120 80H265"/><path id="a2" d="M375 80H520"/><path id="a3" d="M520 100H375"/><path id="a4" d="M265 100H120"/><text class="lb" x="192" y="68">1 Request</text><text class="lb" x="448" y="68">2 Redirect</text><text class="lb" x="448" y="124">3 Assertion</text><text class="lb" x="192" y="124">4 Session</text>${[["M120 80H265",0],["M375 80H520",1],["M520 100H375",2],["M265 100H120",3]].map(a=>`<circle r="5"><animateMotion dur="1.6s" begin="${a[1]*1.6}s;" path="${a[0]}" repeatCount="indefinite" calcMode="linear"/></circle>`).join("")}</svg>`;
+return `<div class="hero dk sso"><div class="w ssi"><div class="hl">${crumb(p)}<h1>Sign in once. <em>Work everywhere.</em></h1><p class="lead rv">Connect your identity provider in minutes. One login, enforced policies and automatic provisioning for every teammate.</p><div class="cta rv"><a class="btn" href="${TAR}">Enable SSO <i>→</i></a><a class="btn ghost" href="${nx.f}">Next: ${nx.n}</a></div><div class="idps rv">${["Okta","Azure AD","Google","OneLogin","Auth0","Ping"].map(x=>`<span>${x}</span>`).join("")}</div></div>
+<div class="hr"><div class="lg rv" id="lg"><div class="lgh"><span class="mk2">A</span><div><b>Sign in to Acme</b><small>acme.northbeam.app</small></div></div><label>Work email</label><input id="lge" value="alex@acme.com"><button class="btn" data-idp="your provider">Continue with SSO <i>→</i></button><div class="or"><span>or continue with</span></div><div class="pv">${["Okta","Google","Microsoft","GitHub"].map(x=>`<button data-idp="${x}">${x}</button>`).join("")}</div><p class="sm">Protected by SAML 2.0 · MFA enforced</p></div></div></div></div>
+<div class="sec w">${eb("How it works","A sign-in, step by step.","Under a second, and your team never sees a password prompt.")}<div class="ssf rv">${flow}</div></div>
+<div class="sec w" style="padding-top:0">${eb("Built in","Everything enterprise IT asks for.")}<div class="pro6">${[["SAML 2.0","Standards-based login with any identity provider.","Protocol"],["OpenID Connect","Modern OAuth-based sign-in for cloud directories.","Protocol"],["SCIM provisioning","Create and remove accounts automatically.","Provisioning"],["Just-in-time accounts","New users are ready on their first login.","Provisioning"],["Enforced MFA","Require a second factor for every member.","Policy"],["Session policies","Set lifetimes, IP rules and device limits.","Policy"]].map((x,i)=>`<div class="pc6 rv" data-n="0${i+1}" style="--d:${(i%3)*.08}s"><span class="tg3">${x[2]}</span><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}</div></div>
+<div class="sec w" style="padding-top:0">${eb("Setup","Live in three steps.")}<div class="stp">${[["Add your provider","Paste your metadata URL or upload the XML file."],["Map attributes","Match email, name and groups in one screen."],["Test and enforce","Try a login, then require SSO for everyone."]].map((x,i)=>`<div class="rv" style="--d:${i*.12}s"><i>${i+1}</i><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}</div></div>
+${band(4)}${rel(p)}<div style="height:110px"></div>${CTA}`}
+const LAYS="ADBCE"+"ABDEC"+"BCDAE"+"CBEDA"+"XDBEA"+"EADCB"+"ACBED"+"AECBD";
+const hd2=t=>{const a=t.split("|");return eb(a[0],a[1]+(/[.?!]$/.test(a[1])?"":"."))};
+const R={
+steps:(t,a)=>`<div class="sec w">${hd2(t)}<div class="stp">${a.map((x,i)=>`<div class="rv" style="--d:${i*.12}s"><i>${i+1}</i><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}</div></div>`,
+grid2:(t,a)=>`<div class="sec w">${hd2(t)}<div class="g2">${a.map((x,i)=>`<div class="rv" style="--d:${i*.08}s"><div class="gl2"><svg viewBox="0 0 24 24">${ICON[(i*2+t.length)%9]}</svg></div><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}</div></div>`,
+quote:(q,n,r)=>`<div class="sec w"><div class="qb rv"><q>${q}</q><div class="who"><div class="av">${n[0]}</div><div><b>${n}</b>${r}</div></div></div></div>`,
+tabs:(t,a)=>`<div class="sec w">${hd2(t)}<div class="tbs rv"><div class="tbh">${a.map((x,i)=>`<button class="${i?"":"on"}" data-tab="${i}">${x[0]}</button>`).join("")}</div>${a.map((x,i)=>`<div class="tbp${i?"":" on"}" data-p="${i}"><h3>${x[1]}</h3><p>${x[2]}</p><div class="mbars">${[72,48,86].map((w,j)=>`<i style="--w:${w-i*14+j*4}%"></i>`).join("")}</div></div>`).join("")}</div></div>`,
+stats:(t,a)=>`<div class="sec w">${hd2(t)}<div class="bn">${a.map((x,i)=>`<div class="rv" style="--d:${i*.1}s"><strong data-n="${x[0]}" data-s="${x[1]}">0</strong><span>${x[2]}</span></div>`).join("")}</div></div>`,
+compare:(t,h,r)=>`<div class="sec w">${hd2(t)}<div class="cmp rv"><div><h4>${h[0]}</h4>${r.map(x=>`<p class="x">${x[0]}</p>`).join("")}</div><div class="yes"><h4>${h[1]}</h4>${r.map(x=>`<p class="v">${x[1]}</p>`).join("")}</div></div></div>`,
+faq:(t,a)=>`<div class="sec w">${hd2(t)}${faq(a)}</div>`,
+cases:(t,a)=>`<div class="sec w">${hd2(t)}<div class="cas">${a.map((x,i)=>`<div class="rv" style="--d:${i*.1}s"><small>${x[0]}</small><b>${x[1]}</b><span>${x[2]}</span></div>`).join("")}</div></div>`,
+list:(t,a)=>`<div class="sec w">${hd2(t)}<div class="bl">${a.map((x,i)=>`<div class="rv" style="--d:${i*.06}s"><span>0${i+1}</span><b>${x[0]}</b><em>${x[1]}</em></div>`).join("")}</div></div>`,
+code:(t,l,c,tx)=>`<div class="sec w"><div class="split"><div><p class="eyebrow rv">${t.split("|")[0]}</p><h2 class="rv">${t.split("|")[1]}</h2><p class="sub rv">${tx}</p></div>${wnd(l==="py"?"example.py":"example.js",`<pre class="code">${hl(c,l)}</pre>`)}</div></div>`,
+split:(t,tx,ls,vis)=>`<div class="sec w"><div class="split"><div><p class="eyebrow rv">${t.split("|")[0]}</p><h2 class="rv">${t.split("|")[1]}</h2><p class="sub rv">${tx}</p><ul class="ls rv">${ls.map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="rv">${VIS[vis]()}</div></div></div>`,
+marq:a=>`<div class="mq" style="margin:60px 0"><div>${[...a,...a,...a,...a].map(x=>`<span>${x}</span>`).join("")}</div></div>`,
+cta2:(t,b)=>`<div class="sec w"><div class="ban rv"><div><h2>${t.split("|")[0]}</h2><p>${t.split("|")[1]}</p></div><a class="btn" href="${TAR}">${b} <i>→</i></a></div></div>`};
+const SEC={
+Dashboards:[["tabs","Views|One board, many angles",[["Executive","Revenue at a glance","Top-line numbers refreshed every minute, ready for Monday standup."],["Product","Usage and adoption","Active users, feature adoption and drop-off in a single glance."],["Support","Queues and response","Open tickets, first reply time and satisfaction together."]]],["split","Share|Dashboards travel well","Send a live link, schedule a PDF or embed a board in your wiki.",["Public or private links","Scheduled PDF snapshots","Embed anywhere"],"Reports"],["quote","We replaced four spreadsheets with one board. Mondays got shorter.","Daniel R.","Founder, Halcyon"]],
+Workspaces:[["compare","Why|Before and after",["Without workspaces","With Northbeam"],[["Everything in one noisy feed","A calm space for each team"],["Clients see internal chatter","Guests only see what you share"],["Setup repeated every time","Templates apply in one click"]]],["grid2","Structure|Built for how teams grow",[["Team spaces","Own tasks, docs and rules."],["Client portals","Branded, read-only views."],["Shared libraries","Templates and assets everyone reuses."],["Org-wide search","Find anything across spaces."]]],["cases","Results|Teams that reorganized",[["Northwind","−40%","time spent searching"],["Halcyon","12","spaces, zero overlap"],["Lumen","3×","faster client onboarding"]]]],
+Projects:[["steps","Planning|From idea to launch",[["Define","Write the goal and the milestones."],["Schedule","Drag bars on a timeline."],["Track","See slips before they happen."]]],["stats","Impact|Plans that hold",[["92","%","milestones hit on time"],["35","%","fewer status meetings"],["2","x","faster kickoff"]]],["faq","FAQ|Projects, answered",[["Can I import from Gantt tools?","Yes, MS Project and CSV files import in minutes."],["Do dependencies move automatically?","Yes, shifting one task reschedules everything that depends on it."],["Can clients see the plan?","Share a read-only timeline link."]]]],
+Tasks:[["tabs","Views|Work the way you think",[["Board","Kanban in one click","Drag work across columns; statuses update on drop."],["List","Dense and fast","Keyboard-first lists with inline editing."],["Timeline","Plan against time","See every task as a bar and spot overload early."]]],["list","Shortcuts|Fast by default",[["Ctrl J","Capture a task from anywhere"],["Ctrl K","Search everything"],["Ctrl Enter","Complete and move on"],["Ctrl D","Duplicate a task"]]],["quote","Our weekly status meeting is gone. The feed replaced it.","Sofia M.","Engineering manager, Lumen"]],
+Reports:[["split","Insights|Charts you can trust","Every number links back to its source, so debates end in seconds.",["Drill into any bar","Live and scheduled","Share with one link"],"Metrics"],["steps","How|Reports in three clicks",[["Pick a source","Tasks, time, revenue or custom data."],["Choose a view","Table, chart or both."],["Schedule it","Inbox, Slack or link."]]],["stats","Usage|Reports people read",[["68","%","open rate on digests"],["4","min","to build a report"],["1.2","M","reports generated"]]]],
+Metrics:[["grid2","Signals|What you can track",[["Product usage","Sessions, features, retention."],["Revenue","MRR, churn, expansion."],["Delivery","Cycle time and throughput."],["Custom","Any event you send us."]]],["code","Send events|One line to track anything","js",`import { Northbeam } from "@northbeam/sdk";
+
+const nb = new Northbeam(process.env.NB_KEY);
+
+await nb.track("invoice.paid", {
+  amount: 29,
+  plan: "pro",
+});`,"Send custom events from your backend or browser. They show up as metrics within seconds."],["faq","FAQ|Good to know",[["How fresh is the data?","Most metrics refresh within a minute."],["Can I define my own KPI?","Yes, write a formula using any metric."],["Is there a limit?","Pro includes 1,000 metrics."]]]],
+Funnels:[["compare","Why|Guessing versus knowing",["Guessing","Funnels"],[["Drop-off is a rumor","Every step has a number"],["Fixes are hunches","Fixes target the leak"],["Reports take days","Live in seconds"]]],["tabs","Segments|Slice it any way",[["By channel","Where winners come from","Compare organic, paid and referral in one funnel."],["By plan","Who converts","See free-to-paid conversion for each plan."],["By region","Where it breaks","Spot local friction fast."]]],["stats","Results|What teams gain",[["18","%","conversion lift"],["3","days","to first insight"],["40","%","less guesswork"]]]],
+Cohorts:[["steps","Method|Read a cohort in 3 steps",[["Group","By signup week or plan."],["Compare","Line up retention curves."],["Act","Target the week that slips."]]],["quote","Cohorts showed us week two was the cliff. We fixed onboarding and retention jumped.","Daniel R.","Founder, Halcyon"],["list","Insights|What you will learn",[["Retention","Who stays and for how long"],["Engagement","Which features keep people"],["Revenue","Which cohorts expand"],["Churn","When and why people leave"]]]],
+Forecasts:[["split","Scenarios|Plan for more than one future","Change one assumption and watch every projection update.",["Best, base and worst case","Confidence bands","Compare against actuals"],"Funnels"],["cases","Accuracy|How close we get",[["Revenue","96%","30-day accuracy"],["Hiring","91%","quarter accuracy"],["Capacity","94%","sprint accuracy"]]],["faq","FAQ|Forecast questions",[["Which model is used?","A blend of trend and seasonality, tuned to your data."],["How much history do I need?","Twelve weeks gives a solid start."],["Can I override it?","Yes, adjust any assumption by hand."]]]],
+Workflows:[["steps","Build|Automate in three moves",[["Pick a trigger","A new task, a status change or a date."],["Add steps","Branch, wait, notify or update."],["Turn it on","Watch runs live in the history."]]],["code","Version control|Workflows as code","py",`name: welcome-new-signup
+trigger: signup.created
+steps:
+  - send_message:
+      to: "#growth"
+  - create_task:
+      title: "Onboard the new user"`,"Prefer text over canvas? Every workflow exports to readable YAML you can review and commit."],["stats","Scale|Automation at work",[["500","K","runs a day"],["99.9","%","delivery rate"],["0","","lines of code needed"]]]],
+Triggers:[["list","Events|Triggers you can use",[["Task created","Fires when any task is added"],["Status changed","Fires when work moves"],["Due soon","Fires before a deadline"],["Member joined","Fires on new invites"],["Webhook received","Fires from your own systems"]]],["compare","Why|Manual versus automatic",["Manual","Triggers"],[["Someone remembers to ping","It happens instantly"],["Handoffs get dropped","Every handoff is logged"],["Rules live in heads","Rules live in one list"]]],["quote","Our escalation rule alone saved us three hours a week.","Amira K.","Product lead, Northwind"]],
+Templates:[["tabs","Library|Templates by team",[["Product","Ship with a plan","Roadmaps, PRDs and launch checklists."],["Marketing","Run every campaign","Calendars, briefs and review flows."],["People","Hire and onboard","Pipelines and 30-60-90 plans."]]],["steps","Use|Start in ten seconds",[["Browse","Search 120+ templates."],["Preview","See the workflow before you copy."],["Customize","Make it yours."]]],["cta2","Share your own|Publish a template for your whole company.","Create a template"]],
+Schedules:[["code","Cron|Write it your way","py",`# every Monday at 09:00
+0 9 * * 1
+
+# or in plain words
+every monday at 9am`,"Use classic cron or plain English. We show you the next five runs before you save."],["grid2","Reliability|Jobs that do not get lost",[["Time zones","Runs in each member's local time."],["Retries","Failed jobs retry with backoff."],["Alerts","Get notified when a job fails."],["History","Every run, kept for 90 days."]]],["stats","Scale|Quietly dependable",[["99.9","%","on-time runs"],["1","M","jobs a week"],["0","","missed digests"]]]],
+Bots:[["tabs","Skills|What bots handle",[["Summaries","Daily digests","Ask for a recap and get decisions, blockers and owners."],["Triage","Sort the inbox","Route requests to the right team automatically."],["Reminders","Nudge politely","Follow up on overdue work in the right channel."]]],["quote","The bot closes the loop on things we used to forget.","Sofia M.","Engineering manager, Lumen"],["faq","FAQ|Bots, answered",[["Where do bots run?","In Northbeam, Slack and email."],["Can they take actions?","Yes, within the permissions you set."],["Is my data used for training?","No. Your data stays yours."]]]],
+Catalog:[["marq",["Slack","GitHub","Google Drive","Stripe","Notion","Figma","Jira","Zoom","HubSpot","Zendesk"]],["steps","Connect|Plug in under a minute",[["Choose","Pick an app from 300+."],["Authorize","Sign in once with OAuth."],["Map","Choose what syncs."]]],["compare","Sync|One-way versus two-way",["One-way","Two-way sync"],[["Data drifts apart","Both sides stay equal"],["Manual re-imports","Updates flow instantly"],["Conflicts guessed","Conflicts resolved by rules"]]]],
+Webhooks:[["code","Verify|Check every signature","js",`import crypto from "crypto";
+
+export function verify(body, header, secret) {
+  const sig = crypto
+    .createHmac("sha256", secret)
+    .update(body)
+    .digest("hex");
+  return sig === header;
+}`,"Every delivery is signed with your secret. Verify it in a few lines before you trust the payload."],["list","Events|What you can subscribe to",[["task.created","A task was added"],["task.completed","A task was finished"],["member.invited","Someone joined"],["report.ready","A report finished"]]],["stats","Delivery|Built to be reliable",[["99.99","%","delivery rate"],["42","ms","median latency"],["5","x","automatic retries"]]]],
+SDK:[["code","Python|Typed and friendly","py",`from northbeam import Client
+
+nb = Client(api_key="nb_live_xxx")
+
+task = nb.tasks.create(
+    title="Ship 4.0",
+    project="launch",
+)
+print(task.id)`,"A small, typed client with automatic retries, pagination and helpful errors."],["grid2","Why|Made to feel native",[["Typed","Autocomplete for every field."],["Retries","Smart backoff built in."],["Pagination","Iterate without cursors."],["Open source","MIT licensed on GitHub."]]],["quote","The SDK saved us a week of glue code.","Daniel R.","Founder, Halcyon"]],
+Marketplace:[["tabs","Browse|Find your next extension",[["Productivity","Do more per hour","Time tracking, focus timers and quick capture."],["Analytics","See further","Extra charts and data connectors."],["AI","Let it help","Summaries, drafts and smart tagging."]]],["steps","Publish|Share what you build",[["Build","Use the SDK and sample apps."],["Submit","We review within three days."],["Earn","Keep 85% of revenue."]]],["stats","Community|A growing ecosystem",[["600","+","extensions"],["4.7","","average rating"],["85","%","revenue to creators"]]]],
+Permissions:[["compare","Why|Open access versus least privilege",["Everyone is admin","Least privilege"],[["Anyone can delete","Only owners can delete"],["Guests see everything","Guests see one project"],["Audits are painful","Audits are one export"]]],["steps","Set up|Roles in minutes",[["Pick a base role","Owner, admin, editor or viewer."],["Tune it","Allow or deny by object."],["Review","See who can do what."]]],["faq","FAQ|Permissions questions",[["Can I create custom roles?","Yes, on Business plans."],["Do guests count as seats?","Guests are free on Pro and Business."],["Can I lock a single doc?","Yes, object-level permissions are built in."]]]],
+Audit:[["split","Search|Find any event fast","Filter by person, action or time and export the result in one click.",["Filter by actor","Export to CSV or SIEM","Retain up to seven years"],"Permissions"],["stats","Coverage|Everything is recorded",[["100","%","actions logged"],["7","yrs","retention"],["0","","editable entries"]]],["quote","Our auditors finished in a day instead of a week.","Amira K.","Product lead, Northwind"]],
+Encryption:[["list","Layers|Protection at every layer",[["TLS 1.3","In transit between every service"],["AES-256","At rest for every file and record"],["Key rotation","Automatic every 90 days"],["Customer keys","Bring your own on Business"]]],["compare","Why|Standard versus Northbeam",["Typical SaaS","Northbeam"],[["Shared keys","Keys per workspace"],["Rotated rarely","Rotated every 90 days"],["Vendor holds the keys","You can hold the keys"]]],["faq","FAQ|Security questions",[["Who can read my data?","Only people you grant access to."],["Where is data stored?","Choose a region at signup."],["Are backups encrypted?","Yes, with separate keys."]]]],
+Compliance:[["marq",["SOC 2","ISO 27001","GDPR","HIPAA","CCPA","PCI DSS","SSO","SCIM","DPA"]],["steps","Process|How we stay certified",[["Monitor","Controls checked every day."],["Audit","Independent review each year."],["Publish","Reports shared under NDA."]]],["cases","Evidence|Documents on request",[["SOC 2","Type II","report available"],["Pen test","Annual","summary available"],["DPA","Signed","on request"]]]],
+Members:[["steps","Onboard|Add your team",[["Invite","Share a link or an email list."],["Assign","Pick roles and groups."],["Welcome","A guided tour starts."]]],["grid2","Groups|Organize however you work",[["Teams","Group by function."],["Projects","Group by effort."],["Guests","Outside collaborators."],["Admins","A small trusted circle."]]],["stats","Scale|From five to five thousand",[["5","K","members per workspace"],["30","s","to invite a team"],["99.9","%","directory sync"]]]],
+Collaboration:[["split","Together|Write side by side","See cursors, selections and comments from every teammate as they happen.",["Live cursors","Inline comments","Version history"],"Comments"],["tabs","Moments|When it shines",[["Planning","Draft the quarter","Outline goals together, then turn bullets into tasks."],["Reviews","Give feedback fast","Comment on the exact line, resolve when done."],["Retros","Capture the lessons","Everyone adds notes in parallel."]]],["quote","Writing together in one doc ended our email threads.","Sofia M.","Engineering manager, Lumen"]],
+Comments:[["list","Features|Conversations that stay tidy",[["Inline threads","Attach a discussion to any line"],["@mentions","Pull in the right person"],["Reactions","Say yes without a reply"],["Resolve","Close the loop cleanly"]]],["compare","Why|Email versus comments",["Email threads","Comments"],[["Context is lost","Context is attached"],["Replies scatter","One thread, one place"],["Decisions vanish","Decisions are searchable"]]],["stats","Impact|Fewer meetings",[["35","%","fewer status meetings"],["2","x","faster reviews"],["90","%","threads resolved in a day"]]]],
+Notifications:[["tabs","Channels|Choose how to hear",[["Email","Digest or instant","Pick a daily or weekly summary."],["Push","Only the urgent","Mobile alerts for mentions and deadlines."],["Slack","Right where you are","Send updates to the channels you already use."]]],["steps","Control|Tune the noise",[["Pick topics","Follow what matters."],["Set quiet hours","Respect time off."],["Batch","Group the rest into a digest."]]],["faq","FAQ|Notification questions",[["Can I mute a project?","Yes, mute or snooze any project."],["Do digests include mentions?","Mentions always notify you."],["Can admins set defaults?","Yes, per workspace."]]]],
+Calendar:[["split","Sync|Your calendars, together","Two-way sync with Google and Outlook keeps everything on one grid.",["Two-way sync","Drag to reschedule","Team availability"],"Schedules"],["steps","Plan|From deadline to done",[["Add a date","On any task or milestone."],["See load","Spot busy weeks early."],["Reschedule","Drag to move, we notify people."]]],["cases","Results|Fewer surprises",[["Northwind","−50%","missed deadlines"],["Halcyon","1","calendar for 4 teams"],["Lumen","9 hrs","saved each month"]]]],
+Docs:[["code","Quickstart|Make your first call","js",`curl "https://api.northbeam.dev/v1/projects" \\
+  -H "Authorization: Bearer $NB_KEY"`,"Every page ships with copy-ready examples in three languages."],["tabs","Sections|Everything is documented",[["Guides","Learn the concepts","Step-by-step tutorials for common jobs."],["Reference","Look anything up","Every endpoint, parameter and error."],["Changelog","Stay current","Every release, explained."]]],["list","Popular|Start here",[["Quickstart","Make your first API call"],["Authentication","API keys and OAuth"],["Webhooks","Receive events"],["Rate limits","Stay within the limits"]]]],
+Blog:[["grid2","Topics|What we write about",[["Focus","How calm teams ship more."],["Process","Rituals that actually work."],["Product","What we shipped and why."],["Culture","How we run Northbeam."]]],["quote","The best writing about teamwork I have read this year.","Amira K.","Product lead, Northwind"],["cta2","Newsletter|One short email a month. No spam.","Subscribe"]],
+Customers:[["cases","Results|Measured outcomes",[["Northwind","+212%","faster planning"],["Halcyon","−60%","status meetings"],["Lumen","3.4×","release velocity"]]],["quote","We dropped three tools in the first week. Everyone just knows where things are now.","Amira K.","Product lead, Northwind"],["marq",["Northwind","Halcyon","Lumen","Parallax","Quill","Fathom","Orbit","Kestrel"]]],
+Academy:[["steps","Path|From beginner to certified",[["Learn","Short video lessons."],["Practice","Hands-on labs."],["Certify","Earn a badge."]]],["stats","Community|Learners worldwide",[["60","+","courses"],["25","K","learners"],["4.9","","average rating"]]],["faq","FAQ|Academy questions",[["Is it free?","Core courses are free for everyone."],["How long does a lesson take?","Most lessons take ten minutes."],["Do I get a certificate?","Yes, and it is shareable."]]]],
+Community:[["grid2","Join|Ways to take part",[["Forum","Ask and answer questions."],["Events","Meetups and live Q&As."],["Champions","Get early access to features."],["Chat","Talk with 30K members."]]],["quote","I learned more in a week on the forum than in a month alone.","Daniel R.","Founder, Halcyon"],["stats","Size|A friendly crowd",[["30","K","members"],["120","+","events a year"],["24","h","median reply time"]]]],
+Pricing:[["quote","Pro paid for itself in the first month.","Sofia M.","Engineering manager, Lumen"],["faq","FAQ|Pricing questions",[["Is Free really free?","Yes, forever, with no card."],["Can I switch plans?","Anytime, effective immediately."],["Do you offer refunds?","Within 30 days, no questions asked."],["Do you offer discounts?","Yes, for nonprofits and education."]]]],
+About:[["list","Values|How we work",[["Calm over chaos","We design for focus"],["Small and sharp","Little teams, big craft"],["Open by default","We publish what we learn"],["Customers first","Support is everyone's job"]]],["stats","Today|Northbeam in numbers",[["45","","people"],["20","+","countries"],["12","K","teams"]]],["cta2","Join us|We are hiring across product, design and engineering.","See open roles"]],
+Support:[["steps","Help|How support works",[["Ask","Chat or email, any time."],["Answer","A human replies within hours."],["Resolve","We follow up until it is fixed."]]],["cases","Speed|Fast and friendly",[["First reply","2 hrs","median"],["Resolution","1 day","median"],["Satisfaction","98%","happy customers"]]],["faq","FAQ|Support questions",[["What are your hours?","24/7 on Business, weekdays otherwise."],["Do you offer onboarding?","Yes, guided setup on Pro and Business."],["Can I talk to a person?","Always. No bots in the way."]]]],
+Status:[["stats","Reliability|Last 90 days",[["99.99","%","API uptime"],["0","","major incidents"],["42","ms","median response"]]],["list","History|Recent incidents",[["Oct 8","Brief delay in webhooks, resolved in 12 min"],["Sep 21","Slow search for some users, resolved in 20 min"],["Aug 30","Scheduled maintenance, no downtime"]]],["cta2","Stay informed|Subscribe to email or SMS alerts for any incident.","Subscribe"]],
+Contact:[["grid2","Reach us|Pick a door",[["Sales","hello@northbeam.dev"],["Support","help@northbeam.dev"],["Press","press@northbeam.dev"],["Partners","partners@northbeam.dev"]]],["faq","FAQ|Before you write",[["How fast will you reply?","Within one business day."],["Do you have a phone line?","Yes, for Business customers."],["Where are you based?","Remote first, across 20 countries."]]]]};
+function page(p){const n=p.n;if(n==="SSO")return ssoPage(p);if(n==="API")return apiPage(p);
+const k=P.indexOf(p),L=LAYS[k],hd=H[n].split("|"),nx=P[(k+1)%P.length],v=VIS[n]?VIS[n]():"";
+const lead=`${DESC[n]}. ${F[n][1].split("|")[1]}.`;
+const txt=`${crumb(p)}<h1>${hd[0]} <em>${hd[1]}</em></h1><p class="lead rv">${lead}</p>`;
+const cta=`<div class="cta rv"><a class="btn" ${n==="Pricing"?'href="#pricing"':'href="auth.html#signup"'}>${n==="Pricing"?"Compare plans":"Try it free"} <i>→</i></a><a class="btn ghost" href="${nx.f}">Next: ${nx.n}</a></div>`;
+let hero;
+if(L==="B")hero=`<div class="hero sp"><div class="w spi"><div class="hl">${txt}${cta}</div><div class="hr">${v}</div></div></div>`;
+else if(L==="E")hero=`<div class="hero sp dk"><div class="w spi"><div class="hl">${txt}${cta}</div><div class="hr">${v}</div></div></div>`;
+else if(L==="D")hero=`<div class="hero hd"><div class="w"><div class="hdm"><span>${p.g}</span><span>${String(k+1).padStart(2,"0")} / 40</span></div><h1>${hd[0]} <em>${hd[1]}</em></h1><div class="hdb"><p class="lead rv">${lead}</p>${cta}</div></div></div>${v?`<div class="w"><div class="stagebox rv">${v}</div></div>`:""}`;
+else hero=`<div class="hero${L==="C"?" dk":""} sh2">${txt}${cta}${v}</div>`;
+const body=(SEC[n]||[]).map(s=>R[s[0]](...s.slice(1))).join("");
+return hero+(n==="Pricing"?PRICING():"")+body+rel(p)+'<div style="height:110px"></div>'+CTA}
+function notFound(){const pop=["Pricing","Dashboards","Tasks","API","SSO","Workflows","Docs","Status"].map(n=>P.find(p=>p.n===n));
+return `<div class="hero dk nf"><div class="w"><div class="n404" aria-label="404"><span>4</span><svg class="ring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/><circle class="orb" r="6"><animateMotion dur="5s" repeatCount="indefinite" path="M50 10a40 40 0 1 1 -.1 0z"/></circle></svg><span>4</span></div>
+<h1>You wandered <em>off the map.</em></h1>
+<p class="lead rv" id="nfl">That page does not exist, but you are in good company. Search below, jump to a popular spot, or take a small thank-you for the detour.</p><div id="nfd"></div>
+<div class="nfs rv"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="nfq" placeholder="Search all 40 sections…" autocomplete="off"><div class="nfr" id="nfr"></div></div></div></div>
+<div class="sec w">${eb("Popular","Where most people go.")}<div class="pop">${pop.map((p,i)=>`<a class="cc rv" href="${p.f}" style="--d:${i%4*.06}s"><small>${p.g}</small><h3>${p.n}</h3><p>${DESC[p.n]}</p></a>`).join("")}</div></div>
+<div class="sec w" style="padding-top:0"><div class="tkt rv" id="tkt"></div></div><div style="height:110px"></div>`}
+function nfInit(){const seg=decodeURIComponent(location.pathname.split("/").filter(Boolean).pop()||"").replace(/\.html?$/i,"").toLowerCase();
+ const lev=(a,b)=>{const m=[];for(let i=0;i<=a.length;i++)m[i]=[i];for(let j=1;j<=b.length;j++)m[0][j]=j;for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return m[a.length][b.length]};
+ if(seg&&seg!=="404"){$("#nfl").textContent='We could not find "'+seg+'". It may have moved, or the link has a typo. Search below, jump to a popular spot, or take a small thank-you for the detour.';
+  let best=null,bd=99;P.forEach(p=>[p.f.replace(".html",""),p.n.toLowerCase()].forEach(c=>{const d=lev(seg,c);if(d<bd){bd=d;best=p}}));
+  if(best&&bd<=Math.max(2,Math.round(seg.length*.4)))$("#nfd").innerHTML=`<a class="dym" href="${best.f}">Did you mean <b>${best.n}</b>? →</a>`}
+ const q=$("#nfq"),r=$("#nfr");let sel=0;
+ q.addEventListener("input",()=>{const t=q.value.trim().toLowerCase();if(!t){r.innerHTML="";return}
+  const cur=P.map(p=>{const n=p.n.toLowerCase();return{p,s:n.startsWith(t)?3:n.includes(t)?2:(p.g.toLowerCase().includes(t)||DESC[p.n].toLowerCase().includes(t))?1:0}}).filter(x=>x.s).sort((a,b)=>b.s-a.s).slice(0,6).map(x=>x.p);
+  sel=0;r.innerHTML=cur.length?cur.map((p,i)=>`<a href="${p.f}" class="${i?"":"sel"}"><b>${p.n}</b><span>${p.g}</span><small>${DESC[p.n]}</small></a>`).join(""):'<div class="nr">Nothing found. Try "pricing" or "api".</div>'});
+ q.addEventListener("keydown",e=>{const a=[...r.querySelectorAll("a")];if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();if(!a.length)return;sel=(sel+(e.key==="ArrowDown"?1:-1)+a.length)%a.length;a.forEach((x,i)=>x.classList.toggle("sel",i===sel))}if(e.key==="Enter"&&a[sel])location.href=a[sel].getAttribute("href")});
+ setTimeout(()=>q.focus(),700);
+ const T=$("#tkt");let cp=getCoupon(),offer=null;
+ if(!cp)offer={code:"LOST-"+Array.from({length:5},()=>"ABCDEFGHJKLMNPQRSTUVWXYZ23456789"[Math.floor(Math.random()*32)]).join(""),pct:15,exp:Date.now()+864e5};
+ const tick=()=>{const c=cp||offer,el=$("#cdn");if(!el)return;const s=Math.max(0,Math.floor((c.exp-Date.now())/1000)),f=n=>String(n).padStart(2,"0");el.textContent=f(Math.floor(s/3600))+":"+f(Math.floor(s%3600/60))+":"+f(s%60)};
+ const draw=()=>{const c=cp||offer,claimed=!!cp;
+  T.innerHTML=`<div class="tkl"><b>${c.pct}%</b><span>OFF</span></div><div class="tkr"><p class="eyebrow">A thank-you for the detour</p><h3>You got lost. We owe you one.</h3><p class="mut">Take ${c.pct}% off your first payment on any paid plan. Made just for you and valid for 24 hours.</p><div class="cod"><code>${c.code}</code><button class="ico" id="cpy">Copy</button></div><div class="tm2">Expires in <b id="cdn">--:--:--</b></div><div class="cta2b">${claimed?'<a class="btn" href="pricing.html#pricing">View plans <i>→</i></a><span class="ok3">✓ Claimed and applied at checkout</span>':`<button class="btn" id="clm">Claim ${c.pct}% off <i>→</i></button>`}</div></div>`;tick()};
+ draw();clearInterval(window._nft);window._nft=setInterval(tick,1000);
+ T.addEventListener("click",e=>{if(e.target.id==="cpy"){const c=cp||offer,b=e.target;(navigator.clipboard?navigator.clipboard.writeText(c.code):Promise.reject()).catch(()=>{}).finally(()=>{b.textContent="Copied ✓";setTimeout(()=>b.textContent="Copy",1400)})}
+  if(e.target.closest("#clm")){try{localStorage.setItem("nbc",JSON.stringify(offer))}catch(x){}cp=offer;offer=null;draw()}})}
+function count(){$$("[data-n]").forEach(el=>{const n=+el.dataset.n,ds=el.dataset.n.split(".")[1],dec=ds?ds.length:0,pre=el.dataset.p||"",suf=el.dataset.s||"";let raf;
+ const set=v=>el.textContent=pre+v.toLocaleString("en-US",{minimumFractionDigits:dec,maximumFractionDigits:dec})+suf;set(0);
+ new IntersectionObserver(en=>{cancelAnimationFrame(raf);if(!en[0].isIntersecting){set(0);return}
+  const t0=performance.now(),f=t=>{const k=Math.min(1,(t-t0)/1900),e=1-Math.pow(1-k,4);set(n*e);k<1&&(raf=requestAnimationFrame(f))};raf=requestAnimationFrame(f)},{threshold:.6}).observe(el)})}
+let io;function startRv(){io&&$$(".rv").forEach(el=>io.observe(el))}
+function route(){const k=window.PAGE,p=P[k];
+ $("#view").innerHTML=k===-1?notFound():k===0?home():page(p);$$(".hero h1").forEach(splitW);
+ io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add("in"),io.unobserve(x.target))),{threshold:.12});
+ count();$$("#nav button").forEach((b,i)=>b.classList.toggle("on",!!p&&p.gi===i+7));document.title=k===-1?"Page not found — Northbeam":(k?p.n+" — ":"")+"Northbeam";if(k===-1)nfInit();renderCpn();}
+const mega=$("#mega");let cur=-1;
+function closeMega(){mega.classList.remove("open");cur=-1}
+$("#nav").innerHTML=G.slice(7).map((g,i)=>`<button data-i="${i}">${g[0]}</button>`).join("");
+mega.innerHTML='<div class="mi one">'+G.slice(7).map((g,gi)=>`<div><h4>${g[0]}</h4>${P.filter(p=>p.gi===gi+7).map(p=>`<a href="${p.f}">${p.n}</a>`).join("")}</div>`).join("")+"</div>";
+$$("#nav button").forEach(b=>{b.onmouseenter=()=>{cur=1;mega.classList.add("open");$$(".mi>div").forEach((d,i)=>d.classList.toggle("on",i==b.dataset.i))};b.onclick=()=>mega.classList.toggle("open")});
+$("#top").onmouseleave=closeMega;
+const M=$("#search"),q=$("#q"),res=$("#res");let sel=0;
+function find(){const t=q.value.toLowerCase().trim(),l=P.filter(p=>!t||(p.n+" "+p.g).toLowerCase().includes(t)).slice(0,12);
+ res.innerHTML=l.map((p,i)=>`<li><a href="${p.f}" class="${i===sel?"sel":""}">${p.n}<span>${p.g}</span></a></li>`).join("")||"<li style='padding:14px;color:var(--mut)'>No results</li>"}
+function openS(){M.classList.add("open");q.value="";sel=0;find();setTimeout(()=>q.focus(),50)}
+const closeS=()=>M.classList.remove("open");
+$("#sbtn").onclick=openS;M.onclick=e=>e.target===M&&closeS();q.oninput=()=>{sel=0;find()};res.onclick=closeS;
+addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key==="k"){e.preventDefault();openS()}
+ if(e.key==="Escape"){closeS();closeMega();$("#panel").classList.remove("open")}
+ if(M.classList.contains("open")&&["ArrowDown","ArrowUp","Enter"].includes(e.key)){const a=$$("#res a");if(e.key==="Enter"&&a[sel]){location.href=a[sel].getAttribute("href")}else{sel=Math.max(0,Math.min(a.length-1,sel+(e.key==="ArrowDown"?1:-1)));a.forEach((x,i)=>x.classList.toggle("sel",i===sel))}}});
+$("#optAcc").innerHTML=Object.keys(ACC).map(k=>`<button data-v="${k}" title="${k}" style="background:${ACC[k][0]}"></button>`).join("");
+const bind=(id,key)=>$(id).onclick=e=>{const b=e.target.closest("button");if(b){S[key]=b.dataset.v;apply()}};
+bind("#optTheme","theme");bind("#optAcc","acc");bind("#optRad","rad");bind("#optMot","mot");
+$("#tbtn").onclick=()=>{S.theme=document.documentElement.dataset.theme==="dark"?"light":"dark";apply()};
+$("#gbtn").onclick=()=>$("#panel").classList.toggle("open");$("#gx").onclick=()=>$("#panel").classList.remove("open");
+$("#reset").onclick=()=>{S={...D};apply()};
+$("#bbtn").onclick=()=>$("#nav").classList.toggle("open");
+apply();route();
+
+
+$("#foot").innerHTML=`<div class="fg"><div><a class="logo" href="index.html">${LOGO}</a><p style="color:var(--mut);margin-top:14px;max-width:260px">One calm workspace for the whole team.</p></div>${[0,2,3,4].map(gi=>`<div><h5>${G[gi][0]}</h5>${P.filter(p=>p.gi===gi).map(p=>`<a href="${p.f}">${p.n}</a>`).join("")}</div>`).join("")}</div><div class="fb"><span>© 2026 Northbeam</span><span>Crafted with care</span></div>`;
+const BAR=$("#bar"),CUR=$("#cur"),lerp=(a,b,t)=>a+(b-a)*t;let sy=0;
+function splitW(el){let i=0;(function w(n){[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t.trim()){f.append(t);return}const o=document.createElement("span");o.className="wd";const s=document.createElement("span");s.textContent=t;s.style.setProperty("--i",i++);o.append(s);f.append(o)});c.replaceWith(f)}else w(c)})})(el)}
+(function loop(){const m=!document.documentElement.classList.contains("noanim"),h=document.documentElement.scrollHeight-innerHeight;
+ sy=lerp(sy,h>0?scrollY/h:0,.15);BAR.style.transform=`scaleX(${sy})`;
+ if(m){$$(".shot").forEach(s=>{const r=s.getBoundingClientRect(),c=(r.top+r.height/2)/innerHeight,t=Math.max(0,Math.min(1,(c-.4)/.6));s._v=lerp(s._v??1,t,.1);s.style.setProperty("--rx",s._v*14+"deg");s.style.setProperty("--sc",1-s._v*.07)});
+ $$(".photo").forEach(p=>{const r=p.getBoundingClientRect(),c=(r.top+r.height/2)/innerHeight-.5;p._v=lerp(p._v??0,c*-70,.1);p.style.translate=`0 ${p._v}px`})}
+ requestAnimationFrame(loop)})();
+document.addEventListener("mousemove",e=>{const t=e.target.closest(".btn");$$(".btn").forEach(b=>{if(b!==t)b.style.translate=""});
+ if(t){const r=t.getBoundingClientRect();t.style.translate=`${(e.clientX-r.left-r.width/2)*.18}px ${(e.clientY-r.top-r.height/2)*.28}px`}
+ const c=e.target.closest(".bc,.tc,.cc,.wi");if(c){const r=c.getBoundingClientRect();c.style.setProperty("--mx",e.clientX-r.left+"px");c.style.setProperty("--my",e.clientY-r.top+"px")}});
+document.addEventListener("click",e=>{const a=e.target.closest("a[href$='.html'],a[href^='auth.html']");if(!a||e.metaKey||e.ctrlKey||e.shiftKey||a.target)return;e.preventDefault();CUR.classList.add("go");setTimeout(()=>location.href=a.getAttribute("href"),480)});
+addEventListener("pageshow",e=>e.persisted&&CUR.classList.remove("go"));
+
+const PL={free:{n:"Free",p:0,f:["Up to 3 projects","1 GB storage","Community support"]},pro:{n:"Pro",p:29,y:23,yt:276,f:["Unlimited projects","100 GB storage","Integrations","Priority support"]},business:{n:"Business",p:59,y:47,yt:564,f:["Single sign-on","Audit logs","1 TB storage","Dedicated support"]}};
+const CO=$("#co");
+const luhn=n=>{let s=0,d=false;for(let i=n.length-1;i>=0;i--){let x=+n[i];if(d){x*=2;if(x>9)x-=9}s+=x;d=!d}return n.length>=13&&s%10===0};
+const brand=d=>/^4/.test(d)?"VISA":/^220[0-4]/.test(d)?"MIR":/^(5[1-5]|2[2-7])/.test(d)?"MASTERCARD":/^3[47]/.test(d)?"AMEX":"CARD";
+const fmtCard=v=>{const d=v.replace(/\D/g,"").slice(0,16);return /^3[47]/.test(d)?[d.slice(0,4),d.slice(4,10),d.slice(10,15)].filter(Boolean).join(" "):d.replace(/(.{4})/g,"$1 ").trim()};
+function closeCO(){CO.classList.remove("open");document.body.style.overflow="";setTimeout(()=>{if(!CO.classList.contains("open"))CO.innerHTML=""},450)}
+function openCO(k){const pl=PL[k],paid=pl.p>0,yr=BILL==="y",tot=paid?(yr?pl.yt:pl.p):0,cp=getCoupon(),disc=paid&&cp?Math.round(tot*cp.pct)/100:0,fin=tot-disc;CO.dataset.k=k;
+ CO.innerHTML=`<div class="ck"><button class="ico cx" id="cx" aria-label="Close">✕</button>
+ <div class="ckl"><p class="eyebrow">Order summary</p><h3>${pl.n} plan${paid?(yr?" · yearly":" · monthly"):""}</h3>
+ ${paid?`<div class="cc3"><div class="cb" id="cbrand">CARD</div><div class="cn" id="pn">•••• •••• •••• ••••</div><div class="cr"><span id="pm">Cardholder</span><span id="pe">MM/YY</span></div></div>`:""}
+ <ul class="ls">${pl.f.map(x=>`<li>${x}</li>`).join("")}</ul>
+ ${disc?`<div class="tot2"><span>Discount · ${cp.code}</span><b>−$${disc.toFixed(2)}</b></div>`:""}<div class="tot"><span>Total today</span><b>$${fin.toFixed(2)}</b></div><small>${paid?(yr?"Billed yearly. You save $"+(pl.p*12-pl.yt)+" a year.":"Billed monthly. Cancel anytime."):"No card needed."}</small></div>
+ <form class="ckr" id="cf" novalidate><h3>${paid?"Payment details":"Create your account"}</h3>
+ <label>Email<input name="em" type="email" autocomplete="email" placeholder="you@company.com"></label>
+ ${paid?`<label>Name on card<input name="nm" autocomplete="cc-name" placeholder="Alex Morgan"></label>
+ <label>Card number<input name="cn" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456" maxlength="19"></label>
+ <div class="two"><label>Expiry<input name="ex" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5"></label><label>CVC<input name="cv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4"></label></div>`:""}
+ <p class="err" id="ce"></p><button class="btn" id="cpay" type="submit">${paid?"Pay $"+fin.toFixed(2):"Create free account"} <i>→</i></button>
+ <p class="dm">Demo checkout: nothing is charged and card details never leave this page.</p></form></div>`;
+ CO.classList.add("open");document.body.style.overflow="hidden";setTimeout(()=>{const f=$("#cf");f&&f.elements.em.focus()},350)}
+CO.addEventListener("input",e=>{const t=e.target;if(!t.name)return;t.classList.remove("bad");
+ if(t.name==="cn")t.value=fmtCard(t.value);
+ if(t.name==="ex"){const d=t.value.replace(/\D/g,"").slice(0,4);t.value=d.length>2?d.slice(0,2)+"/"+d.slice(2):d}
+ if(t.name==="cv")t.value=t.value.replace(/\D/g,"").slice(0,4);
+ const f=$("#cf");if(!f||!$("#pn"))return;const d=f.elements.cn.value.replace(/\D/g,"");
+ $("#pn").textContent=d.padEnd(16,"•").replace(/(.{4})/g,"$1 ").trim();$("#cbrand").textContent=brand(d);$("#pm").textContent=f.elements.nm.value||"Cardholder";$("#pe").textContent=f.elements.ex.value||"MM/YY"});
+CO.addEventListener("submit",e=>{e.preventDefault();const f=e.target,k=CO.dataset.k,pl=PL[k],paid=pl.p>0;let bad=null,msg="";
+ const fail=(el,m)=>{if(!bad){bad=el;msg=m}el.classList.add("bad")};
+ if(!/^\S+@\S+\.\S+$/.test(f.elements.em.value.trim()))fail(f.elements.em,"Enter a valid email address.");
+ if(paid){const d=f.elements.cn.value.replace(/\D/g,""),am=/^3[47]/.test(d);
+  if(f.elements.nm.value.trim().length<2)fail(f.elements.nm,"Enter the name on the card.");
+  if(!luhn(d))fail(f.elements.cn,"That card number doesn't look right.");
+  const m=f.elements.ex.value.match(/^(\d\d)\/(\d\d)$/);if(!m||+m[1]<1||+m[1]>12||new Date(2000+ +m[2],+m[1],1)<=new Date())fail(f.elements.ex,"Check the expiry date.");
+  if(f.elements.cv.value.length!==(am?4:3))fail(f.elements.cv,am?"Amex CVC has 4 digits.":"CVC has 3 digits.")}
+ $("#ce").textContent=msg;if(bad){bad.focus();return}
+ const email=f.elements.em.value.trim(),b=$("#cpay");b.disabled=true;b.innerHTML='Processing <i class="spin">◌</i>';
+ setTimeout(()=>{f.innerHTML=`<div class="ok"><svg viewBox="0 0 84 84"><circle cx="42" cy="42" r="38" stroke-width="3" pathLength="100"/><path d="M26 43l11 11 21-23" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/></svg><h3>${paid?"Payment successful":"Account created"}</h3><p style="color:var(--mut)">Welcome to ${pl.n}. Confirmation goes to <b id="cem"></b>.</p><small style="color:var(--mut)">Order NB-${Math.floor(100000+Math.random()*900000)}</small><button class="btn" type="button" id="cdone" style="width:auto">Done</button><p class="dm">This was a demo. No money was charged.</p></div>`;$("#cem").textContent=email},1700)});
+CO.addEventListener("click",e=>{if(e.target===CO||e.target.id==="cx"||e.target.id==="cdone")closeCO()});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-plan]");if(b){e.preventDefault();openCO(b.dataset.plan)}});
+addEventListener("keydown",e=>e.key==="Escape"&&closeCO());
+
+
+document.addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(!b)return;const t=b.closest(".tbs");t.querySelectorAll("[data-tab]").forEach(x=>x.classList.toggle("on",x===b));t.querySelectorAll(".tbp").forEach(x=>x.classList.toggle("on",x.dataset.p===b.dataset.tab))});
+let USER=null;try{USER=JSON.parse(localStorage.getItem("nbu")||"null")}catch(e){}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function renderAuth(){const a=$("#au");if(!a)return;
+ a.innerHTML=USER?`<div class="meb"><button class="ico me" id="me"><span class="av2">${esc((USER.name||"U")[0].toUpperCase())}</span><span>${esc((USER.name||"").split(" ")[0])}</span></button><div class="um" id="um"><small>Signed in as</small><b>${esc(USER.email)}</b><button class="btn ghost" id="so">Sign out</button></div></div>`:`<a class="ico lgi" href="auth.html#login">Log in</a><a class="btn sgn" href="auth.html#signup">Sign up</a>`}
+document.addEventListener("click",e=>{
+ if(e.target.id==="so"){USER=null;try{localStorage.removeItem("nbu")}catch(x){}renderAuth();return}
+ if(e.target.closest("#me")){$("#um").classList.toggle("open");return}
+ if(!e.target.closest(".meb")){const m=$("#um");m&&m.classList.remove("open")}});
+renderAuth();
+let BILL="m";
+function setBill(m){BILL=m;
+ $$("#bill").forEach(b=>{b.dataset.b=m;b.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.bill===m))});
+ $$(".amt").forEach(el=>{const to=+el.dataset[m],from=+(el.textContent.replace(/\D/g,""))||to,t0=performance.now();cancelAnimationFrame(el._r);
+  const f=t=>{const k=Math.min(1,(t-t0)/450),e=1-Math.pow(1-k,3);el.textContent="$"+Math.round(from+(to-from)*e);if(k<1)el._r=requestAnimationFrame(f)};el._r=requestAnimationFrame(f)});
+ $$(".bnote[data-m]").forEach(n=>n.textContent=n.dataset[m])}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-bill]");if(b)setBill(b.dataset.bill)});
+function getCoupon(){try{const c=JSON.parse(localStorage.getItem("nbc")||"null");if(c&&c.exp>Date.now())return c;if(c)localStorage.removeItem("nbc")}catch(e){}return null}
+function renderCpn(){const el=$("#cpn");if(!el)return;const c=getCoupon();if(!c){el.hidden=true;return}el.hidden=false;el.innerHTML="<b>"+c.code+"</b> applied: −"+c.pct+"% on your first payment. <a href=\"#\" id=\"cpx\">Remove</a>"}
+document.addEventListener("click",e=>{if(e.target.id==="cpx"){e.preventDefault();try{localStorage.removeItem("nbc")}catch(x){}renderCpn()}});
+let LANG="Python";
+document.addEventListener("click",e=>{const t=e.target.closest("[data-lang]");
+ if(t){LANG=t.dataset.lang;$$("[data-lang]").forEach(x=>x.classList.toggle("on",x===t));const c=$("#cd");c.innerHTML=hl(CODE[LANG][1],CODE[LANG][0]);c.style.animation="none";void c.offsetWidth;c.style.animation=""}
+ if(e.target.id==="cp"){const b=e.target;(navigator.clipboard?navigator.clipboard.writeText(CODE[LANG][1]):Promise.reject()).catch(()=>{}).finally(()=>{b.textContent="Copied ✓";setTimeout(()=>b.textContent="Copy",1400)})}
+ const d=e.target.closest("[data-idp]"),L=$("#lg");
+ if(d&&L){const idp=d.dataset.idp,em=($("#lge").value||"you@company.com").trim();if(!L._h)L._h=L.innerHTML;
+  L.innerHTML=`<div class="ok"><i class="spin" style="font-size:54px;font-style:normal">◌</i><h3>Redirecting to ${idp}…</h3><p style="color:var(--mut)">Verifying via SAML 2.0</p></div>`;
+  setTimeout(()=>{L.innerHTML=`<div class="ok"><svg viewBox="0 0 84 84"><circle cx="42" cy="42" r="38" stroke-width="3" pathLength="100"/><path d="M26 43l11 11 21-23" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/></svg><h3>Signed in</h3><p style="color:var(--mut)">Verified by ${idp} as <b id="lgm"></b></p><button class="btn" id="lgr" style="width:auto">Sign out</button></div>`;$("#lgm").textContent=em},1400)}
+ if(e.target.id==="lgr"&&L){L.innerHTML=L._h}});
+(function loader(){const L=$("#ld"),num=$("#lnum");let first=true;try{first=!sessionStorage.getItem("nbv");sessionStorage.setItem("nbv","1")}catch(e){}
+ const na=document.documentElement.classList.contains("noanim"),dur=na?150:first?2000:700;if(!first)L.classList.add("fast");
+ let ended=false;const end=()=>{if(ended)return;ended=true;L.classList.add("done");setTimeout(()=>{document.documentElement.classList.add("ready");startRv()},400);setTimeout(()=>L.remove(),1400)};
+ const t0=performance.now(),f=t=>{const k=Math.min(1,(t-t0)/dur),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;num.textContent=Math.round(e*100);L.style.setProperty("--p",e);k<1?requestAnimationFrame(f):end()};
+ requestAnimationFrame(f);setTimeout(end,dur+1500)})();
+
+</script>
+</body>
+</html>
